@@ -1,0 +1,181 @@
+﻿@{
+    ViewBag.Title = "Profile";
+}
+<script src="~/Angular/angular.min.js"></script>
+<script src="~/Angular/app.js"></script>
+<script src="~/Angular/Controller/n53rqr0f173.js"></script>
+<div class="wrapper wrapper-content animated fadeInRight" ng-app="davnorapp">
+
+
+    <div class="row m-b-lg m-t-lg" ng-controller="n53rqr0f173">
+        <div class="panel panel-default" style="border-color:{{_p.roleColor}}">
+            <div class="panel-heading">
+               
+            </div>
+            <div class="panel-body">
+                <!-- /.col-lg-4 -->
+
+                <div class="row clearfix">
+
+                    <div class="col-md-4" ng-init='_rndr("@ViewBag.Error")'>
+                        <form action="../Account/updateImage" method="post" enctype="multipart/form-data">
+                            <div class="profile-image">
+                                <input ng-hide="true" type="text" ng-model="_p.PID" id="PersonalID" />
+                                <img src="../account/retrieveimage/@ViewBag.Error" onclick="i()" id="userimage" class="img-circle circle-border m-b-lg" style="object-fit:cover;height:200px;width:200px; margin-left:50px;cursor:pointer" alt="profile">
+                                <input onchange="upimg(this)" type="file" class="ladda-button btn btn-primary btn-file btn-block" id="img" name="img" accept="image/jpeg, image/png" style="display: none;">
+                                <div class="row">
+                                    <button type="submit" class="btn btn-default" id="sve" style="display:none"> save </button>
+
+                                </div>
+                            </div>
+                        </form>
+                        <div class="profile-info">
+                            <div class="" style="margin-left:100px">
+                                <div>
+                                    <h2 class="no-margins" ng-show="_edit">
+                                        {{_p.firstName}} {{_p.middleName}} {{_p.lastName}}
+                                    </h2>
+                                    <div class="form-group" ng-hide="_editProfile">
+
+                                        <input type="text" class="form-control" placeholder="First Name" ng-model="_p.firstName" />
+                                        <input type="text" class="form-control" placeholder="Middle Name" ng-model="_p.middleName" />
+                                        <input type="text" class="form-control" placeholder="Last Name" ng-model="_p.lastName" />
+
+
+                                    </div>
+                                    <div class="form-group" ng-hide="_editAccount">
+                                        <form method="post" action="~/Account/userprofile" enctype="multipart/form-data">
+                                            <input type="text" class="form-control" placeholder="Username" name="usr" ng-model="_p.username" />
+                                            <input type="password" class="form-control" placeholder="Current Password" name="currpw" />
+                                            <input type="password" class="form-control" placeholder="New Password" name="pw" ng-model="pw" ng-keyup="chck()" />
+                                            <input type="password" class="form-control" placeholder="Confirm New Password" name="confpw" ng-model="confpw" ng-keyup="chck()" />
+                                            <input type="submit" id="subm" />
+                                        </form>
+                                    </div>
+                                    <h4>
+                                        <span class="label label-default" style="background-color:{{_.roleColor}}">{{_p.roleName}}</span>
+                                    </h4>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <button ng-hide="_edit" ng-click="_s(1)" class="btn btn-default" id="savebtn" style="cursor:pointer"><i class="fa fa-check"></i> Save</button>
+                            <button ng-hide="_edit" ng-click="_s(2)" class="btn btn-default" style="cursor:pointer"><i class="fa fa-close"></i> Cancel</button>
+                            <a ng-show="_edit" id="editprofile" ng-click="_e(1)" style="cursor:pointer"><i class="fa fa-edit"></i> Edit Profile</a>
+                            <br />
+                            <a ng-show="_edit" id="ediAccount" ng-click="_e(2)" style="cursor:pointer"><i class="fa fa-edit"></i> Edit Account</a>
+                            <p>@ViewBag.detail</p>
+                        </div>
+
+                        <div id="sparkline1"><canvas style="display: inline-block; width: 242px; height: 50px; vertical-align: top;" width="242" height="50"></canvas></div>
+                    </div>
+                    <div class="col-md-6" ng-init="renderchart('@ViewBag.Error')">
+                        <canvas id="myChart" width="400" height="250"></canvas>
+
+                    </div>
+
+                </div>
+           
+                <div class="row clearfix">
+                    
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th colspan="5">
+                                        My Diagnosis
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Age
+                                    </th>
+                                    <th>
+                                        Height
+                                    </th>
+                                    <th>
+                                        Weight
+                                    </th>
+                                    <th>
+                                        Diagnosis Result
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="t in tbbmires">
+                                    <td>
+                                        {{t.logDate}}
+                                    </td>
+                                   
+                                    <td>
+                                        {{t.age}}
+                                    </td>
+
+                                    <td>
+                                        {{t.height}}
+                                    </td>
+                                    <td>
+                                        {{t.weight}}
+                                    </td>
+                                    <td>
+                                        {{t.BMIResult}}
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+ 
+</div>
+<script>
+    if ('@Session["PID"]' != '@ViewBag.Error') {
+        $("#editprofile").hide()
+        $("#ediAccount").hide()
+    }
+    function i() {
+        if ('@Session["PID"]' == '@ViewBag.Error') {
+            $("#img").click()
+        }
+    }
+    off();
+    function off() {
+        $("#sve").hide();
+
+        $("#cancer").hide();
+    }
+    function upimg(file) {
+
+        var reader = new FileReader();
+
+
+        reader.onload = function (e) {
+            $("#")
+            $("#userimage").attr('src', e.target.result)
+            var formData = new FormData();
+            formData.append('file', file.files[0])
+            $("#sve").click();
+
+        }
+        reader.readAsDataURL(file.files[0]);
+
+    }
+
+
+</script>

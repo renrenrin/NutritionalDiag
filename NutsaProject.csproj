@@ -1,0 +1,1676 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{379387E6-3D30-49D0-812D-2407827F6E99}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NutsaProject</RootNamespace>
+    <AssemblyName>NutsaProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.4</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReferenceController.cs" />
+    <Compile Include="Controllers\SessionTimeoutAttribute.cs" />
+    <Compile Include="Controllers\UserAccess.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tDiagnosi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tMenu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tProfile.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tProfileImage.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tProfileRole.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\trefBrgy.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\trefCityMun.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\trefProvince.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tUser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tUserAccess.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vProfile.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vUserAccess.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Angular\app.js" />
+    <Content Include="Angular\Controller\indexctrl.js" />
+    <Content Include="Angular\Controller\m4ua63.js" />
+    <Content Include="Angular\Controller\n53rqr0f173.js" />
+    <Content Include="Angular\Controller\summary.js" />
+    <Content Include="Angular\ui-bootstrap-2.5.0-csp.css" />
+    <Content Include="Angular\ui-bootstrap-tpls-2.5.0.min.js" />
+    <Content Include="Content\5n.png" />
+    <Content Include="Content\angular.min.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\icon-awesome.min.css" />
+    <Content Include="Content\jquery.min.js" />
+    <Content Include="Content\metisMenu.min.css" />
+    <Content Include="Content\metisMenu.min.js" />
+    <Content Include="Content\morris-data.js" />
+    <Content Include="Content\morris.css" />
+    <Content Include="Content\morris.min.js" />
+    <Content Include="Content\raphael.min.js" />
+    <Content Include="Content\sb-admin-2.css" />
+    <Content Include="Content\sb-admin-2.js" />
+    <None Include="Content\_references.js" />
+    <Content Include="Content\Weight-Scale-Transparent.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Interface\Ispinia\css\animate.css" />
+    <Content Include="Interface\Ispinia\css\bootstrap.min.css" />
+    <Content Include="Interface\Ispinia\css\patterns\3.png" />
+    <Content Include="Interface\Ispinia\css\patterns\4.png" />
+    <Content Include="Interface\Ispinia\css\patterns\header-profile-skin-1.png" />
+    <Content Include="Interface\Ispinia\css\patterns\header-profile-skin-2.png" />
+    <Content Include="Interface\Ispinia\css\patterns\header-profile-skin-3.png" />
+    <Content Include="Interface\Ispinia\css\patterns\header-profile.png" />
+    <Content Include="Interface\Ispinia\css\patterns\shattered.png" />
+    <Content Include="Interface\Ispinia\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="Interface\Ispinia\css\plugins\blueimp\css\blueimp-gallery.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\blueimp\img\error.png" />
+    <Content Include="Interface\Ispinia\css\plugins\blueimp\img\error.svg" />
+    <Content Include="Interface\Ispinia\css\plugins\blueimp\img\loading.gif" />
+    <Content Include="Interface\Ispinia\css\plugins\blueimp\img\play-pause.png" />
+    <Content Include="Interface\Ispinia\css\plugins\blueimp\img\play-pause.svg" />
+    <Content Include="Interface\Ispinia\css\plugins\blueimp\img\video-play.png" />
+    <Content Include="Interface\Ispinia\css\plugins\blueimp\img\video-play.svg" />
+    <Content Include="Interface\Ispinia\css\plugins\bootstrap-markdown\bootstrap-markdown.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\bootstrapTour\bootstrap-tour.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\c3\c3.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\chartist\chartist.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\chosen\chosen-sprite%402x.png" />
+    <Content Include="Interface\Ispinia\css\plugins\chosen\chosen-sprite.png" />
+    <Content Include="Interface\Ispinia\css\plugins\chosen\chosen.css" />
+    <Content Include="Interface\Ispinia\css\plugins\clockpicker\clockpicker.css" />
+    <Content Include="Interface\Ispinia\css\plugins\codemirror\ambiance.css" />
+    <Content Include="Interface\Ispinia\css\plugins\codemirror\codemirror.css" />
+    <Content Include="Interface\Ispinia\css\plugins\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\cropper\cropper.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\datapicker\datepicker3.css" />
+    <Content Include="Interface\Ispinia\css\plugins\dataTables\datatables.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Interface\Ispinia\css\plugins\dropzone\basic.css" />
+    <Content Include="Interface\Ispinia\css\plugins\dropzone\dropzone.css" />
+    <Content Include="Interface\Ispinia\css\plugins\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="Interface\Ispinia\css\plugins\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="Interface\Ispinia\css\plugins\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="Interface\Ispinia\css\plugins\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Interface\Ispinia\css\plugins\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="Interface\Ispinia\css\plugins\footable\fonts\footable.svg" />
+    <Content Include="Interface\Ispinia\css\plugins\footable\footable.core.css" />
+    <Content Include="Interface\Ispinia\css\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Interface\Ispinia\css\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Interface\Ispinia\css\plugins\iCheck\custom.css" />
+    <Content Include="Interface\Ispinia\css\plugins\iCheck\green%402x.png" />
+    <Content Include="Interface\Ispinia\css\plugins\iCheck\green.png" />
+    <Content Include="Interface\Ispinia\css\plugins\images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Interface\Ispinia\css\plugins\images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Interface\Ispinia\css\plugins\images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Interface\Ispinia\css\plugins\images\bootstrap-colorpicker\hue.png" />
+    <Content Include="Interface\Ispinia\css\plugins\images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Interface\Ispinia\css\plugins\images\sprite-skin-flat.png" />
+    <Content Include="Interface\Ispinia\css\plugins\images\spritemap%402x.png" />
+    <Content Include="Interface\Ispinia\css\plugins\images\spritemap.png" />
+    <Content Include="Interface\Ispinia\css\plugins\ionRangeSlider\ion.rangeSlider.css" />
+    <Content Include="Interface\Ispinia\css\plugins\ionRangeSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Interface\Ispinia\css\plugins\jasny\jasny-bootstrap.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\jqGrid\ui.jqgrid.css" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\animated-overlay.gif" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-icons_222222_256x240.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-icons_454545_256x240.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-icons_888888_256x240.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\jQueryUI\jquery-ui.css" />
+    <Content Include="Interface\Ispinia\css\plugins\jsTree\style.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\ladda\ladda-themeless.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\nouslider\jquery.nouislider.css" />
+    <Content Include="Interface\Ispinia\css\plugins\select2\select2.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\slick\ajax-loader.gif" />
+    <Content Include="Interface\Ispinia\css\plugins\slick\fonts\slick.svg" />
+    <Content Include="Interface\Ispinia\css\plugins\slick\slick-theme.css" />
+    <Content Include="Interface\Ispinia\css\plugins\slick\slick.css" />
+    <Content Include="Interface\Ispinia\css\plugins\steps\jquery.steps.css" />
+    <Content Include="Interface\Ispinia\css\plugins\summernote\summernote-bs3.css" />
+    <Content Include="Interface\Ispinia\css\plugins\summernote\summernote.css" />
+    <Content Include="Interface\Ispinia\css\plugins\sweetalert\sweetalert.css" />
+    <Content Include="Interface\Ispinia\css\plugins\switchery\switchery.css" />
+    <Content Include="Interface\Ispinia\css\plugins\toastr\toastr.min.css" />
+    <Content Include="Interface\Ispinia\css\plugins\touchspin\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="Interface\Ispinia\css\style.css" />
+    <Content Include="Interface\Ispinia\font-awesome\css\font-awesome.css" />
+    <Content Include="Interface\Ispinia\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Interface\Ispinia\font-awesome\fonts\fontawesome-webfonte0a5.svg" />
+    <Content Include="Interface\Ispinia\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Interface\Ispinia\img\a1.jpg" />
+    <Content Include="Interface\Ispinia\img\a2.jpg" />
+    <Content Include="Interface\Ispinia\img\a3.jpg" />
+    <Content Include="Interface\Ispinia\img\a4.jpg" />
+    <Content Include="Interface\Ispinia\img\a5.jpg" />
+    <Content Include="Interface\Ispinia\img\a6.jpg" />
+    <Content Include="Interface\Ispinia\img\a7.jpg" />
+    <Content Include="Interface\Ispinia\img\a8.jpg" />
+    <Content Include="Interface\Ispinia\img\angular_logo.png" />
+    <Content Include="Interface\Ispinia\img\dashbard4_1.jpg" />
+    <Content Include="Interface\Ispinia\img\dashbard4_2.jpg" />
+    <Content Include="Interface\Ispinia\img\DENR.png" />
+    <Content Include="Interface\Ispinia\img\email_1.jpg" />
+    <Content Include="Interface\Ispinia\img\email_2.jpg" />
+    <Content Include="Interface\Ispinia\img\email_3.jpg" />
+    <Content Include="Interface\Ispinia\img\flags\16\Spain.png" />
+    <Content Include="Interface\Ispinia\img\flags\16\United-States.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Abkhazia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Afghanistan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Aland.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Albania.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Algeria.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\American-Samoa.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Andorra.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Angola.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Anguilla.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Antarctica.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Antigua-and-Barbuda.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Argentina.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Armenia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Aruba.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Australia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Austria.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Azerbaijan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Bahamas.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Bahrain.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Bangladesh.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Barbados.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Basque-Country.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Belarus.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Belgium.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Belize.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Benin.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Bermuda.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Bhutan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Bolivia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Bosnia-and-Herzegovina.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Botswana.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Brazil.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\British-Antarctic-Territory.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\British-Virgin-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Brunei.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Bulgaria.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Burkina-Faso.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Burundi.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Cambodia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Cameroon.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Canada.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Canary-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Cape-Verde.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Cayman-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Central-African-Republic.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Chad.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Chile.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\China.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Christmas-Island.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Cocos-Keeling-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Colombia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Commonwealth.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Comoros.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Cook-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Costa-Rica.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Cote-dIvoire.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Croatia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Cuba.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Curacao.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Cyprus.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Czech-Republic.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Democratic-Republic-of-the-Congo.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Denmark.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Djibouti.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Dominica.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Dominican-Republic.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\East-Timor.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Ecuador.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Egypt.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\El-Salvador.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\England.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Equatorial-Guinea.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Eritrea.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Estonia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Ethiopia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\European-Union.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Falkland-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Faroes.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Fiji.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Finland.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\France.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\French-Polynesia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\French-Southern-Territories.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Gabon.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Gambia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Georgia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Germany.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Ghana.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Gibraltar.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\GoSquared.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Greece.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Greenland.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Grenada.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Guam.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Guatemala.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Guernsey.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Guinea-Bissau.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Guinea.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Guyana.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Haiti.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Honduras.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Hong-Kong.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Hungary.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Iceland.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\India.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Indonesia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Iran.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Iraq.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Ireland.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Isle-of-Man.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Israel.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Italy.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Jamaica.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Japan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Jersey.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Jordan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Kazakhstan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Kenya.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Kiribati.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Kosovo.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Kuwait.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Kyrgyzstan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Laos.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Latvia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Lebanon.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Lesotho.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Liberia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Libya.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Liechtenstein.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Lithuania.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Luxembourg.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Macau.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Macedonia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Madagascar.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Malawi.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Malaysia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Maldives.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Mali.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Malta.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Mars.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Marshall-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Martinique.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Mauritania.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Mauritius.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Mayotte.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Mexico.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Micronesia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Moldova.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Monaco.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Mongolia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Montenegro.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Montserrat.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Morocco.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Mozambique.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Myanmar.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Nagorno-Karabakh.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Namibia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\NATO.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Nauru.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Nepal.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Netherlands-Antilles.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Netherlands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\New-Caledonia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\New-Zealand.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Nicaragua.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Niger.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Nigeria.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Niue.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Norfolk-Island.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\North-Korea.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Northern-Cyprus.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Northern-Mariana-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Norway.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Olympics.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Oman.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Pakistan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Palau.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Palestine.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Panama.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Papua-New-Guinea.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Paraguay.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Peru.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Philippines.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Pitcairn-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Poland.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Portugal.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Puerto-Rico.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Qatar.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Red-Cross.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Republic-of-the-Congo.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Romania.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Russia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Rwanda.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Saint-Barthelemy.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Saint-Helena.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Saint-Kitts-and-Nevis.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Saint-Lucia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Saint-Martin.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Saint-Vincent-and-the-Grenadines.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Samoa.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\San-Marino.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Sao-Tome-and-Principe.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Saudi-Arabia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Scotland.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Senegal.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Serbia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Seychelles.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Sierra-Leone.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Singapore.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Slovakia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Slovenia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Solomon-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Somalia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Somaliland.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\South-Africa.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\South-Georgia-and-the-South-Sandwich-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\South-Korea.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\South-Ossetia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\South-Sudan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Spain.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Sri-Lanka.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Sudan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Suriname.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Swaziland.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Sweden.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Switzerland.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Syria.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Taiwan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Tajikistan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Tanzania.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Thailand.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Togo.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Tokelau.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Tonga.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Trinidad-and-Tobago.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Tunisia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Turkey.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Turkmenistan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Turks-and-Caicos-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Tuvalu.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Uganda.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Ukraine.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\United-Arab-Emirates.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\United-Kingdom.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\United-Nations.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\United-States.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Unknown.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Uruguay.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\US-Virgin-Islands.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Uzbekistan.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Vanuatu.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Vatican-City.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Venezuela.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Vietnam.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Wales.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Wallis-And-Futuna.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Western-Sahara.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Yemen.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Zambia.png" />
+    <Content Include="Interface\Ispinia\img\flags\32\Zimbabwe.png" />
+    <Content Include="Interface\Ispinia\img\full_height.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\1.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\10.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\10s.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\11.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\11s.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\12.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\12s.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\1s.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\2.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\2s.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\3.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\3s.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\4.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\4s.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\5.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\5s.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\6.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\6s.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\7.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\7s.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\8.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\8s.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\9.jpg" />
+    <Content Include="Interface\Ispinia\img\gallery\9s.jpg" />
+    <Content Include="Interface\Ispinia\img\html_logo.png" />
+    <Content Include="Interface\Ispinia\img\landing\avatar1.jpg" />
+    <Content Include="Interface\Ispinia\img\landing\avatar2.jpg" />
+    <Content Include="Interface\Ispinia\img\landing\avatar3.jpg" />
+    <Content Include="Interface\Ispinia\img\landing\avatar_all.png" />
+    <Content Include="Interface\Ispinia\img\landing\dashboard.png" />
+    <Content Include="Interface\Ispinia\img\landing\header_one.jpg" />
+    <Content Include="Interface\Ispinia\img\landing\header_two.jpg" />
+    <Content Include="Interface\Ispinia\img\landing\iphone.jpg" />
+    <Content Include="Interface\Ispinia\img\landing\laptop.png" />
+    <Content Include="Interface\Ispinia\img\landing\perspective.png" />
+    <Content Include="Interface\Ispinia\img\landing\word_map.png" />
+    <Content Include="Interface\Ispinia\img\meteor_logo.png" />
+    <Content Include="Interface\Ispinia\img\mvc_logo.png" />
+    <Content Include="Interface\Ispinia\img\no_photo.png" />
+    <Content Include="Interface\Ispinia\img\off_canvas.jpg" />
+    <Content Include="Interface\Ispinia\img\p1.jpg" />
+    <Content Include="Interface\Ispinia\img\p2.jpg" />
+    <Content Include="Interface\Ispinia\img\p3.jpg" />
+    <Content Include="Interface\Ispinia\img\profile.jpg" />
+    <Content Include="Interface\Ispinia\img\profile_big.jpg" />
+    <Content Include="Interface\Ispinia\img\profile_small.jpg" />
+    <Content Include="Interface\Ispinia\img\p_big1.jpg" />
+    <Content Include="Interface\Ispinia\img\p_big2.jpg" />
+    <Content Include="Interface\Ispinia\img\p_big3.jpg" />
+    <Content Include="Interface\Ispinia\img\rails_logo.png" />
+    <Content Include="Interface\Ispinia\img\zender_logo.png" />
+    <Content Include="Interface\Ispinia\js\bootstrap.js" />
+    <Content Include="Interface\Ispinia\js\bootstrap.min.js" />
+    <Content Include="Interface\Ispinia\js\demo\chartjs-demo.js" />
+    <Content Include="Interface\Ispinia\js\demo\flot-demo.js" />
+    <Content Include="Interface\Ispinia\js\demo\morris-demo.js" />
+    <Content Include="Interface\Ispinia\js\demo\peity-demo.js" />
+    <Content Include="Interface\Ispinia\js\demo\rickshaw-demo.js" />
+    <Content Include="Interface\Ispinia\js\demo\sparkline-demo.js" />
+    <Content Include="Interface\Ispinia\js\inspinia.js" />
+    <Content Include="Interface\Ispinia\js\jquery-2.1.1.js" />
+    <Content Include="Interface\Ispinia\js\jquery-ui-1.10.4.min.js" />
+    <Content Include="Interface\Ispinia\js\jquery-ui.custom.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\blueimp\jquery.blueimp-gallery.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\bootstrap-markdown\bootstrap-markdown.js" />
+    <Content Include="Interface\Ispinia\js\plugins\bootstrap-markdown\markdown.js" />
+    <Content Include="Interface\Ispinia\js\plugins\bootstrapTour\bootstrap-tour.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\c3\c3.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\chartist\chartist.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\chartJs\Chart.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\chosen\chosen.jquery.js" />
+    <Content Include="Interface\Ispinia\js\plugins\clipboard\clipboard.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\clockpicker\clockpicker.js" />
+    <Content Include="Interface\Ispinia\js\plugins\codemirror\codemirror.js" />
+    <Content Include="Interface\Ispinia\js\plugins\codemirror\mode\javascript\javascript.js" />
+    <Content Include="Interface\Ispinia\js\plugins\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\cropper\cropper.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\d3\d3.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\datapicker\bootstrap-datepicker.js" />
+    <Content Include="Interface\Ispinia\js\plugins\dataTables\datatables.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="Interface\Ispinia\js\plugins\diff_match_patch\javascript\diff_match_patch.js" />
+    <Content Include="Interface\Ispinia\js\plugins\dotdotdot\jquery.dotdotdot.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\dropzone\dropzone.js" />
+    <Content Include="Interface\Ispinia\js\plugins\easypiechart\jquery.easypiechart.js" />
+    <Content Include="Interface\Ispinia\js\plugins\flot\curvedLines.js" />
+    <Content Include="Interface\Ispinia\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Interface\Ispinia\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Interface\Ispinia\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Interface\Ispinia\js\plugins\flot\jquery.flot.spline.js" />
+    <Content Include="Interface\Ispinia\js\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Interface\Ispinia\js\plugins\flot\jquery.flot.time.js" />
+    <Content Include="Interface\Ispinia\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\footable\footable.all.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\fullcalendar\moment.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\gritter\images\gritter-light.png" />
+    <Content Include="Interface\Ispinia\js\plugins\gritter\images\gritter.png" />
+    <Content Include="Interface\Ispinia\js\plugins\gritter\images\ie-spacer.gif" />
+    <Content Include="Interface\Ispinia\js\plugins\gritter\jquery.gritter.css" />
+    <Content Include="Interface\Ispinia\js\plugins\gritter\jquery.gritter.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\i18next\i18next.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\iCheck\icheck.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\idle-timer\idle-timer.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\ionRangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\jasny\jasny-bootstrap.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\jeditable\jquery.jeditable.js" />
+    <Content Include="Interface\Ispinia\js\plugins\jqGrid\i18n\grid.locale-en.js" />
+    <Content Include="Interface\Ispinia\js\plugins\jqGrid\jquery.jqGrid.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\jsKnob\jquery.knob.js" />
+    <Content Include="Interface\Ispinia\js\plugins\jsTree\jstree.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\jvectormap\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Interface\Ispinia\js\plugins\ladda\ladda.jquery.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\ladda\ladda.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\ladda\spin.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\masonary\masonry.pkgd.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="Interface\Ispinia\js\plugins\morris\morris.js" />
+    <Content Include="Interface\Ispinia\js\plugins\morris\raphael-2.1.0.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\nestable\jquery.nestable.js" />
+    <Content Include="Interface\Ispinia\js\plugins\nouslider\jquery.nouislider.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\pace\pace.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\peity\jquery.peity.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\preetyTextDiff\jquery.pretty-text-diff.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\rickshaw\rickshaw.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\rickshaw\vendor\d3.v3.js" />
+    <Content Include="Interface\Ispinia\js\plugins\select2\select2.full.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\slick\slick.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\staps\jquery.steps.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\summernote\summernote.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\sweetalert\sweetalert.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\switchery\switchery.js" />
+    <Content Include="Interface\Ispinia\js\plugins\tinycon\tinycon.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\toastr\toastr.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\touchspin\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\validate\jquery.validate.min.js" />
+    <Content Include="Interface\Ispinia\js\plugins\video\responsible-video.js" />
+    <Content Include="Interface\Ispinia\js\plugins\wow\wow.min.js" />
+    <Content Include="node_modules\chart.js\dist\Chart.bundle.js" />
+    <Content Include="node_modules\chart.js\dist\Chart.bundle.min.js" />
+    <Content Include="node_modules\chart.js\dist\Chart.js" />
+    <Content Include="node_modules\chart.js\dist\Chart.min.js" />
+    <Content Include="node_modules\chart.js\dist\docs\axes\cartesian\category.html" />
+    <Content Include="node_modules\chart.js\dist\docs\axes\cartesian\index.html" />
+    <Content Include="node_modules\chart.js\dist\docs\axes\cartesian\linear.html" />
+    <Content Include="node_modules\chart.js\dist\docs\axes\cartesian\logarithmic.html" />
+    <Content Include="node_modules\chart.js\dist\docs\axes\cartesian\time.html" />
+    <Content Include="node_modules\chart.js\dist\docs\axes\index.html" />
+    <Content Include="node_modules\chart.js\dist\docs\axes\labelling.html" />
+    <Content Include="node_modules\chart.js\dist\docs\axes\radial\index.html" />
+    <Content Include="node_modules\chart.js\dist\docs\axes\radial\linear.html" />
+    <Content Include="node_modules\chart.js\dist\docs\axes\styling.html" />
+    <Content Include="node_modules\chart.js\dist\docs\charts\area.html" />
+    <Content Include="node_modules\chart.js\dist\docs\charts\bar.html" />
+    <Content Include="node_modules\chart.js\dist\docs\charts\bubble.html" />
+    <Content Include="node_modules\chart.js\dist\docs\charts\doughnut.html" />
+    <Content Include="node_modules\chart.js\dist\docs\charts\index.html" />
+    <Content Include="node_modules\chart.js\dist\docs\charts\line.html" />
+    <Content Include="node_modules\chart.js\dist\docs\charts\mixed.html" />
+    <Content Include="node_modules\chart.js\dist\docs\charts\polar.html" />
+    <Content Include="node_modules\chart.js\dist\docs\charts\radar.html" />
+    <Content Include="node_modules\chart.js\dist\docs\charts\scatter.html" />
+    <Content Include="node_modules\chart.js\dist\docs\configuration\animations.html" />
+    <Content Include="node_modules\chart.js\dist\docs\configuration\elements.html" />
+    <Content Include="node_modules\chart.js\dist\docs\configuration\index.html" />
+    <Content Include="node_modules\chart.js\dist\docs\configuration\layout.html" />
+    <Content Include="node_modules\chart.js\dist\docs\configuration\legend.html" />
+    <Content Include="node_modules\chart.js\dist\docs\configuration\title.html" />
+    <Content Include="node_modules\chart.js\dist\docs\configuration\tooltip.html" />
+    <Content Include="node_modules\chart.js\dist\docs\developers\api.html" />
+    <Content Include="node_modules\chart.js\dist\docs\developers\axes.html" />
+    <Content Include="node_modules\chart.js\dist\docs\developers\charts.html" />
+    <Content Include="node_modules\chart.js\dist\docs\developers\contributing.html" />
+    <Content Include="node_modules\chart.js\dist\docs\developers\index.html" />
+    <Content Include="node_modules\chart.js\dist\docs\developers\plugins.html" />
+    <Content Include="node_modules\chart.js\dist\docs\developers\updates.html" />
+    <Content Include="node_modules\chart.js\dist\docs\general\colors.html" />
+    <Content Include="node_modules\chart.js\dist\docs\general\device-pixel-ratio.html" />
+    <Content Include="node_modules\chart.js\dist\docs\general\fonts.html" />
+    <Content Include="node_modules\chart.js\dist\docs\general\index.html" />
+    <Content Include="node_modules\chart.js\dist\docs\general\interactions\events.html" />
+    <Content Include="node_modules\chart.js\dist\docs\general\interactions\index.html" />
+    <Content Include="node_modules\chart.js\dist\docs\general\interactions\modes.html" />
+    <Content Include="node_modules\chart.js\dist\docs\general\options.html" />
+    <Content Include="node_modules\chart.js\dist\docs\general\responsive.html" />
+    <Content Include="node_modules\chart.js\dist\docs\getting-started\index.html" />
+    <Content Include="node_modules\chart.js\dist\docs\getting-started\installation.html" />
+    <Content Include="node_modules\chart.js\dist\docs\getting-started\integration.html" />
+    <Content Include="node_modules\chart.js\dist\docs\getting-started\usage.html" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\fonts\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-anchorjs\anchor-style.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-chartjs\Chart.bundle.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-chartjs\Chart.bundle.min.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-chartjs\Chart.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-chartjs\Chart.min.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-chartjs\chartjs-plugin-deferred.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-chartjs\chartjs-plugin-deferred.min.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-chartjs\style.css" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-fontsettings\fontsettings.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-fontsettings\website.css" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-ga\plugin.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-highlight\ebook.css" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-highlight\website.css" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-search-plus\jquery.mark.min.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-search-plus\search.css" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-search-plus\search.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook-plugin-sharing\buttons.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\gitbook.js" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\images\apple-touch-icon-precomposed-152.png" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\images\favicon.ico" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\style.css" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\theme.js" />
+    <Content Include="node_modules\chart.js\dist\docs\index.html" />
+    <Content Include="node_modules\chart.js\dist\docs\notes\comparison.html" />
+    <Content Include="node_modules\chart.js\dist\docs\notes\extensions.html" />
+    <Content Include="node_modules\chart.js\dist\docs\notes\index.html" />
+    <Content Include="node_modules\chart.js\dist\docs\notes\license.html" />
+    <Content Include="node_modules\chart.js\dist\docs\style.css" />
+    <Content Include="node_modules\chart.js\docs\style.css" />
+    <Content Include="node_modules\chart.js\gulpfile.js" />
+    <Content Include="node_modules\chart.js\karma.conf.js" />
+    <Content Include="node_modules\chart.js\samples\advanced\data-labelling.html" />
+    <Content Include="node_modules\chart.js\samples\advanced\progress-bar.html" />
+    <Content Include="node_modules\chart.js\samples\charts\area\analyser.js" />
+    <Content Include="node_modules\chart.js\samples\charts\area\line-boundaries.html" />
+    <Content Include="node_modules\chart.js\samples\charts\area\line-datasets.html" />
+    <Content Include="node_modules\chart.js\samples\charts\area\line-stacked.html" />
+    <Content Include="node_modules\chart.js\samples\charts\area\radar.html" />
+    <Content Include="node_modules\chart.js\samples\charts\bar\horizontal.html" />
+    <Content Include="node_modules\chart.js\samples\charts\bar\multi-axis.html" />
+    <Content Include="node_modules\chart.js\samples\charts\bar\stacked-group.html" />
+    <Content Include="node_modules\chart.js\samples\charts\bar\stacked.html" />
+    <Content Include="node_modules\chart.js\samples\charts\bar\vertical.html" />
+    <Content Include="node_modules\chart.js\samples\charts\bubble.html" />
+    <Content Include="node_modules\chart.js\samples\charts\combo-bar-line.html" />
+    <Content Include="node_modules\chart.js\samples\charts\doughnut.html" />
+    <Content Include="node_modules\chart.js\samples\charts\line\basic.html" />
+    <Content Include="node_modules\chart.js\samples\charts\line\interpolation-modes.html" />
+    <Content Include="node_modules\chart.js\samples\charts\line\line-styles.html" />
+    <Content Include="node_modules\chart.js\samples\charts\line\multi-axis.html" />
+    <Content Include="node_modules\chart.js\samples\charts\line\point-sizes.html" />
+    <Content Include="node_modules\chart.js\samples\charts\line\point-styles.html" />
+    <Content Include="node_modules\chart.js\samples\charts\line\skip-points.html" />
+    <Content Include="node_modules\chart.js\samples\charts\line\stepped.html" />
+    <Content Include="node_modules\chart.js\samples\charts\pie.html" />
+    <Content Include="node_modules\chart.js\samples\charts\polar-area.html" />
+    <Content Include="node_modules\chart.js\samples\charts\radar-skip-points.html" />
+    <Content Include="node_modules\chart.js\samples\charts\radar.html" />
+    <Content Include="node_modules\chart.js\samples\charts\scatter\basic.html" />
+    <Content Include="node_modules\chart.js\samples\charts\scatter\multi-axis.html" />
+    <Content Include="node_modules\chart.js\samples\favicon.ico" />
+    <Content Include="node_modules\chart.js\samples\index.html" />
+    <Content Include="node_modules\chart.js\samples\legend\point-style.html" />
+    <Content Include="node_modules\chart.js\samples\legend\positioning.html" />
+    <Content Include="node_modules\chart.js\samples\logo.svg" />
+    <Content Include="node_modules\chart.js\samples\samples.js" />
+    <Content Include="node_modules\chart.js\samples\scales\filtering-labels.html" />
+    <Content Include="node_modules\chart.js\samples\scales\gridlines-display.html" />
+    <Content Include="node_modules\chart.js\samples\scales\gridlines-style.html" />
+    <Content Include="node_modules\chart.js\samples\scales\linear\min-max-suggested.html" />
+    <Content Include="node_modules\chart.js\samples\scales\linear\min-max.html" />
+    <Content Include="node_modules\chart.js\samples\scales\linear\step-size.html" />
+    <Content Include="node_modules\chart.js\samples\scales\logarithmic\line.html" />
+    <Content Include="node_modules\chart.js\samples\scales\logarithmic\scatter.html" />
+    <Content Include="node_modules\chart.js\samples\scales\multiline-labels.html" />
+    <Content Include="node_modules\chart.js\samples\scales\non-numeric-y.html" />
+    <Content Include="node_modules\chart.js\samples\scales\time\combo.html" />
+    <Content Include="node_modules\chart.js\samples\scales\time\financial.html" />
+    <Content Include="node_modules\chart.js\samples\scales\time\line-point-data.html" />
+    <Content Include="node_modules\chart.js\samples\scales\time\line.html" />
+    <Content Include="node_modules\chart.js\samples\scales\toggle-scale-type.html" />
+    <Content Include="node_modules\chart.js\samples\scriptable\bubble.html" />
+    <Content Include="node_modules\chart.js\samples\style.css" />
+    <Content Include="node_modules\chart.js\samples\tooltips\border.html" />
+    <Content Include="node_modules\chart.js\samples\tooltips\callbacks.html" />
+    <Content Include="node_modules\chart.js\samples\tooltips\custom-line.html" />
+    <Content Include="node_modules\chart.js\samples\tooltips\custom-pie.html" />
+    <Content Include="node_modules\chart.js\samples\tooltips\custom-points.html" />
+    <Content Include="node_modules\chart.js\samples\tooltips\interactions.html" />
+    <Content Include="node_modules\chart.js\samples\tooltips\positioning.html" />
+    <Content Include="node_modules\chart.js\samples\utils.js" />
+    <Content Include="node_modules\chart.js\src\chart.js" />
+    <Content Include="node_modules\chart.js\src\charts\Chart.Bar.js" />
+    <Content Include="node_modules\chart.js\src\charts\Chart.Bubble.js" />
+    <Content Include="node_modules\chart.js\src\charts\Chart.Doughnut.js" />
+    <Content Include="node_modules\chart.js\src\charts\Chart.Line.js" />
+    <Content Include="node_modules\chart.js\src\charts\Chart.PolarArea.js" />
+    <Content Include="node_modules\chart.js\src\charts\Chart.Radar.js" />
+    <Content Include="node_modules\chart.js\src\charts\Chart.Scatter.js" />
+    <Content Include="node_modules\chart.js\src\controllers\controller.bar.js" />
+    <Content Include="node_modules\chart.js\src\controllers\controller.bubble.js" />
+    <Content Include="node_modules\chart.js\src\controllers\controller.doughnut.js" />
+    <Content Include="node_modules\chart.js\src\controllers\controller.line.js" />
+    <Content Include="node_modules\chart.js\src\controllers\controller.polarArea.js" />
+    <Content Include="node_modules\chart.js\src\controllers\controller.radar.js" />
+    <Content Include="node_modules\chart.js\src\controllers\controller.scatter.js" />
+    <Content Include="node_modules\chart.js\src\core\core.animation.js" />
+    <Content Include="node_modules\chart.js\src\core\core.controller.js" />
+    <Content Include="node_modules\chart.js\src\core\core.datasetController.js" />
+    <Content Include="node_modules\chart.js\src\core\core.defaults.js" />
+    <Content Include="node_modules\chart.js\src\core\core.element.js" />
+    <Content Include="node_modules\chart.js\src\core\core.helpers.js" />
+    <Content Include="node_modules\chart.js\src\core\core.interaction.js" />
+    <Content Include="node_modules\chart.js\src\core\core.js" />
+    <Content Include="node_modules\chart.js\src\core\core.layouts.js" />
+    <Content Include="node_modules\chart.js\src\core\core.plugins.js" />
+    <Content Include="node_modules\chart.js\src\core\core.scale.js" />
+    <Content Include="node_modules\chart.js\src\core\core.scaleService.js" />
+    <Content Include="node_modules\chart.js\src\core\core.ticks.js" />
+    <Content Include="node_modules\chart.js\src\core\core.tooltip.js" />
+    <Content Include="node_modules\chart.js\src\elements\element.arc.js" />
+    <Content Include="node_modules\chart.js\src\elements\element.line.js" />
+    <Content Include="node_modules\chart.js\src\elements\element.point.js" />
+    <Content Include="node_modules\chart.js\src\elements\element.rectangle.js" />
+    <Content Include="node_modules\chart.js\src\elements\index.js" />
+    <Content Include="node_modules\chart.js\src\helpers\helpers.canvas.js" />
+    <Content Include="node_modules\chart.js\src\helpers\helpers.core.js" />
+    <Content Include="node_modules\chart.js\src\helpers\helpers.easing.js" />
+    <Content Include="node_modules\chart.js\src\helpers\helpers.options.js" />
+    <Content Include="node_modules\chart.js\src\helpers\index.js" />
+    <Content Include="node_modules\chart.js\src\platforms\platform.basic.js" />
+    <Content Include="node_modules\chart.js\src\platforms\platform.dom.js" />
+    <Content Include="node_modules\chart.js\src\platforms\platform.js" />
+    <Content Include="node_modules\chart.js\src\plugins\index.js" />
+    <Content Include="node_modules\chart.js\src\plugins\plugin.filler.js" />
+    <Content Include="node_modules\chart.js\src\plugins\plugin.legend.js" />
+    <Content Include="node_modules\chart.js\src\plugins\plugin.title.js" />
+    <Content Include="node_modules\chart.js\src\scales\scale.category.js" />
+    <Content Include="node_modules\chart.js\src\scales\scale.linear.js" />
+    <Content Include="node_modules\chart.js\src\scales\scale.linearbase.js" />
+    <Content Include="node_modules\chart.js\src\scales\scale.logarithmic.js" />
+    <Content Include="node_modules\chart.js\src\scales\scale.radialLinear.js" />
+    <Content Include="node_modules\chart.js\src\scales\scale.time.js" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-absolute.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-flex-offset.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-flex.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-max.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-min-interval.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-multiple.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-no-overlap.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-offset.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-single-xy.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-single.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-stacked.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\core.scale\label-offset-vertical-axes.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-end-span.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-end.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin-span.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin-spline-span.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin-spline.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped-span.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-start-span.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-start.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-dataset-span.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-dataset-spline-span.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-dataset-spline.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-dataset.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-radar-boundary-origin-spline.png" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-radar-boundary-origin.png" />
+    <Content Include="node_modules\chart.js\test\jasmine.context.js" />
+    <Content Include="node_modules\chart.js\test\jasmine.index.js" />
+    <Content Include="node_modules\chart.js\test\jasmine.matchers.js" />
+    <Content Include="node_modules\chart.js\test\jasmine.utils.js" />
+    <Content Include="node_modules\chart.js\test\specs\controller.bar.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\controller.bubble.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\controller.doughnut.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\controller.line.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\controller.polarArea.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\controller.radar.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\controller.scatter.test.js" />
+    <Content Include="node_modules\chart.js\test\specs\core.controller.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\core.datasetController.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\core.element.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\core.helpers.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\core.interaction.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\core.layouts.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\core.plugin.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\core.scale.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\core.scaleService.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\core.ticks.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\core.tooltip.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\element.arc.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\element.line.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\element.point.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\element.rectangle.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\global.defaults.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\global.deprecations.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\helpers.canvas.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\helpers.core.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\helpers.easing.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\helpers.options.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\platform.dom.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\plugin.filler.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\plugin.legend.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\plugin.title.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\scale.category.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\scale.linear.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\scale.logarithmic.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\scale.radialLinear.tests.js" />
+    <Content Include="node_modules\chart.js\test\specs\scale.time.tests.js" />
+    <Content Include="node_modules\chartjs-color-string\color-string.js" />
+    <Content Include="node_modules\chartjs-color-string\test\basic.js" />
+    <Content Include="node_modules\chartjs-color\index.js" />
+    <Content Include="node_modules\color-convert\conversions.js" />
+    <Content Include="node_modules\color-convert\index.js" />
+    <Content Include="node_modules\color-convert\test\basic.js" />
+    <Content Include="node_modules\color-convert\test\speed.js" />
+    <Content Include="node_modules\color-name\index.js" />
+    <Content Include="node_modules\color-name\test.js" />
+    <Content Include="node_modules\moment\ender.js" />
+    <Content Include="node_modules\moment\locale\af.js" />
+    <Content Include="node_modules\moment\locale\ar-dz.js" />
+    <Content Include="node_modules\moment\locale\ar-kw.js" />
+    <Content Include="node_modules\moment\locale\ar-ly.js" />
+    <Content Include="node_modules\moment\locale\ar-ma.js" />
+    <Content Include="node_modules\moment\locale\ar-sa.js" />
+    <Content Include="node_modules\moment\locale\ar-tn.js" />
+    <Content Include="node_modules\moment\locale\ar.js" />
+    <Content Include="node_modules\moment\locale\az.js" />
+    <Content Include="node_modules\moment\locale\be.js" />
+    <Content Include="node_modules\moment\locale\bg.js" />
+    <Content Include="node_modules\moment\locale\bm.js" />
+    <Content Include="node_modules\moment\locale\bn.js" />
+    <Content Include="node_modules\moment\locale\bo.js" />
+    <Content Include="node_modules\moment\locale\br.js" />
+    <Content Include="node_modules\moment\locale\bs.js" />
+    <Content Include="node_modules\moment\locale\ca.js" />
+    <Content Include="node_modules\moment\locale\cs.js" />
+    <Content Include="node_modules\moment\locale\cv.js" />
+    <Content Include="node_modules\moment\locale\cy.js" />
+    <Content Include="node_modules\moment\locale\da.js" />
+    <Content Include="node_modules\moment\locale\de-at.js" />
+    <Content Include="node_modules\moment\locale\de-ch.js" />
+    <Content Include="node_modules\moment\locale\de.js" />
+    <Content Include="node_modules\moment\locale\dv.js" />
+    <Content Include="node_modules\moment\locale\el.js" />
+    <Content Include="node_modules\moment\locale\en-au.js" />
+    <Content Include="node_modules\moment\locale\en-ca.js" />
+    <Content Include="node_modules\moment\locale\en-gb.js" />
+    <Content Include="node_modules\moment\locale\en-ie.js" />
+    <Content Include="node_modules\moment\locale\en-il.js" />
+    <Content Include="node_modules\moment\locale\en-nz.js" />
+    <Content Include="node_modules\moment\locale\eo.js" />
+    <Content Include="node_modules\moment\locale\es-do.js" />
+    <Content Include="node_modules\moment\locale\es-us.js" />
+    <Content Include="node_modules\moment\locale\es.js" />
+    <Content Include="node_modules\moment\locale\et.js" />
+    <Content Include="node_modules\moment\locale\eu.js" />
+    <Content Include="node_modules\moment\locale\fa.js" />
+    <Content Include="node_modules\moment\locale\fi.js" />
+    <Content Include="node_modules\moment\locale\fo.js" />
+    <Content Include="node_modules\moment\locale\fr-ca.js" />
+    <Content Include="node_modules\moment\locale\fr-ch.js" />
+    <Content Include="node_modules\moment\locale\fr.js" />
+    <Content Include="node_modules\moment\locale\fy.js" />
+    <Content Include="node_modules\moment\locale\gd.js" />
+    <Content Include="node_modules\moment\locale\gl.js" />
+    <Content Include="node_modules\moment\locale\gom-latn.js" />
+    <Content Include="node_modules\moment\locale\gu.js" />
+    <Content Include="node_modules\moment\locale\he.js" />
+    <Content Include="node_modules\moment\locale\hi.js" />
+    <Content Include="node_modules\moment\locale\hr.js" />
+    <Content Include="node_modules\moment\locale\hu.js" />
+    <Content Include="node_modules\moment\locale\hy-am.js" />
+    <Content Include="node_modules\moment\locale\id.js" />
+    <Content Include="node_modules\moment\locale\is.js" />
+    <Content Include="node_modules\moment\locale\it.js" />
+    <Content Include="node_modules\moment\locale\ja.js" />
+    <Content Include="node_modules\moment\locale\jv.js" />
+    <Content Include="node_modules\moment\locale\ka.js" />
+    <Content Include="node_modules\moment\locale\kk.js" />
+    <Content Include="node_modules\moment\locale\km.js" />
+    <Content Include="node_modules\moment\locale\kn.js" />
+    <Content Include="node_modules\moment\locale\ko.js" />
+    <Content Include="node_modules\moment\locale\ky.js" />
+    <Content Include="node_modules\moment\locale\lb.js" />
+    <Content Include="node_modules\moment\locale\lo.js" />
+    <Content Include="node_modules\moment\locale\lt.js" />
+    <Content Include="node_modules\moment\locale\lv.js" />
+    <Content Include="node_modules\moment\locale\me.js" />
+    <Content Include="node_modules\moment\locale\mi.js" />
+    <Content Include="node_modules\moment\locale\mk.js" />
+    <Content Include="node_modules\moment\locale\ml.js" />
+    <Content Include="node_modules\moment\locale\mn.js" />
+    <Content Include="node_modules\moment\locale\mr.js" />
+    <Content Include="node_modules\moment\locale\ms-my.js" />
+    <Content Include="node_modules\moment\locale\ms.js" />
+    <Content Include="node_modules\moment\locale\mt.js" />
+    <Content Include="node_modules\moment\locale\my.js" />
+    <Content Include="node_modules\moment\locale\nb.js" />
+    <Content Include="node_modules\moment\locale\ne.js" />
+    <Content Include="node_modules\moment\locale\nl-be.js" />
+    <Content Include="node_modules\moment\locale\nl.js" />
+    <Content Include="node_modules\moment\locale\nn.js" />
+    <Content Include="node_modules\moment\locale\pa-in.js" />
+    <Content Include="node_modules\moment\locale\pl.js" />
+    <Content Include="node_modules\moment\locale\pt-br.js" />
+    <Content Include="node_modules\moment\locale\pt.js" />
+    <Content Include="node_modules\moment\locale\ro.js" />
+    <Content Include="node_modules\moment\locale\ru.js" />
+    <Content Include="node_modules\moment\locale\sd.js" />
+    <Content Include="node_modules\moment\locale\se.js" />
+    <Content Include="node_modules\moment\locale\si.js" />
+    <Content Include="node_modules\moment\locale\sk.js" />
+    <Content Include="node_modules\moment\locale\sl.js" />
+    <Content Include="node_modules\moment\locale\sq.js" />
+    <Content Include="node_modules\moment\locale\sr-cyrl.js" />
+    <Content Include="node_modules\moment\locale\sr.js" />
+    <Content Include="node_modules\moment\locale\ss.js" />
+    <Content Include="node_modules\moment\locale\sv.js" />
+    <Content Include="node_modules\moment\locale\sw.js" />
+    <Content Include="node_modules\moment\locale\ta.js" />
+    <Content Include="node_modules\moment\locale\te.js" />
+    <Content Include="node_modules\moment\locale\tet.js" />
+    <Content Include="node_modules\moment\locale\tg.js" />
+    <Content Include="node_modules\moment\locale\th.js" />
+    <Content Include="node_modules\moment\locale\tl-ph.js" />
+    <Content Include="node_modules\moment\locale\tlh.js" />
+    <Content Include="node_modules\moment\locale\tr.js" />
+    <Content Include="node_modules\moment\locale\tzl.js" />
+    <Content Include="node_modules\moment\locale\tzm-latn.js" />
+    <Content Include="node_modules\moment\locale\tzm.js" />
+    <Content Include="node_modules\moment\locale\ug-cn.js" />
+    <Content Include="node_modules\moment\locale\uk.js" />
+    <Content Include="node_modules\moment\locale\ur.js" />
+    <Content Include="node_modules\moment\locale\uz-latn.js" />
+    <Content Include="node_modules\moment\locale\uz.js" />
+    <Content Include="node_modules\moment\locale\vi.js" />
+    <Content Include="node_modules\moment\locale\x-pseudo.js" />
+    <Content Include="node_modules\moment\locale\yo.js" />
+    <Content Include="node_modules\moment\locale\zh-cn.js" />
+    <Content Include="node_modules\moment\locale\zh-hk.js" />
+    <Content Include="node_modules\moment\locale\zh-tw.js" />
+    <Content Include="node_modules\moment\min\locales.js" />
+    <Content Include="node_modules\moment\min\locales.min.js" />
+    <Content Include="node_modules\moment\min\moment-with-locales.js" />
+    <Content Include="node_modules\moment\min\moment-with-locales.min.js" />
+    <Content Include="node_modules\moment\min\moment.min.js" />
+    <Content Include="node_modules\moment\moment.js" />
+    <Content Include="node_modules\moment\package.js" />
+    <Content Include="node_modules\moment\src\lib\create\check-overflow.js" />
+    <Content Include="node_modules\moment\src\lib\create\date-from-array.js" />
+    <Content Include="node_modules\moment\src\lib\create\from-anything.js" />
+    <Content Include="node_modules\moment\src\lib\create\from-array.js" />
+    <Content Include="node_modules\moment\src\lib\create\from-object.js" />
+    <Content Include="node_modules\moment\src\lib\create\from-string-and-array.js" />
+    <Content Include="node_modules\moment\src\lib\create\from-string-and-format.js" />
+    <Content Include="node_modules\moment\src\lib\create\from-string.js" />
+    <Content Include="node_modules\moment\src\lib\create\local.js" />
+    <Content Include="node_modules\moment\src\lib\create\parsing-flags.js" />
+    <Content Include="node_modules\moment\src\lib\create\utc.js" />
+    <Content Include="node_modules\moment\src\lib\create\valid.js" />
+    <Content Include="node_modules\moment\src\lib\duration\abs.js" />
+    <Content Include="node_modules\moment\src\lib\duration\add-subtract.js" />
+    <Content Include="node_modules\moment\src\lib\duration\as.js" />
+    <Content Include="node_modules\moment\src\lib\duration\bubble.js" />
+    <Content Include="node_modules\moment\src\lib\duration\clone.js" />
+    <Content Include="node_modules\moment\src\lib\duration\constructor.js" />
+    <Content Include="node_modules\moment\src\lib\duration\create.js" />
+    <Content Include="node_modules\moment\src\lib\duration\duration.js" />
+    <Content Include="node_modules\moment\src\lib\duration\get.js" />
+    <Content Include="node_modules\moment\src\lib\duration\humanize.js" />
+    <Content Include="node_modules\moment\src\lib\duration\iso-string.js" />
+    <Content Include="node_modules\moment\src\lib\duration\prototype.js" />
+    <Content Include="node_modules\moment\src\lib\duration\valid.js" />
+    <Content Include="node_modules\moment\src\lib\format\format.js" />
+    <Content Include="node_modules\moment\src\lib\locale\base-config.js" />
+    <Content Include="node_modules\moment\src\lib\locale\calendar.js" />
+    <Content Include="node_modules\moment\src\lib\locale\constructor.js" />
+    <Content Include="node_modules\moment\src\lib\locale\en.js" />
+    <Content Include="node_modules\moment\src\lib\locale\formats.js" />
+    <Content Include="node_modules\moment\src\lib\locale\invalid.js" />
+    <Content Include="node_modules\moment\src\lib\locale\lists.js" />
+    <Content Include="node_modules\moment\src\lib\locale\locale.js" />
+    <Content Include="node_modules\moment\src\lib\locale\locales.js" />
+    <Content Include="node_modules\moment\src\lib\locale\ordinal.js" />
+    <Content Include="node_modules\moment\src\lib\locale\pre-post-format.js" />
+    <Content Include="node_modules\moment\src\lib\locale\prototype.js" />
+    <Content Include="node_modules\moment\src\lib\locale\relative.js" />
+    <Content Include="node_modules\moment\src\lib\locale\set.js" />
+    <Content Include="node_modules\moment\src\lib\moment\add-subtract.js" />
+    <Content Include="node_modules\moment\src\lib\moment\calendar.js" />
+    <Content Include="node_modules\moment\src\lib\moment\clone.js" />
+    <Content Include="node_modules\moment\src\lib\moment\compare.js" />
+    <Content Include="node_modules\moment\src\lib\moment\constructor.js" />
+    <Content Include="node_modules\moment\src\lib\moment\creation-data.js" />
+    <Content Include="node_modules\moment\src\lib\moment\diff.js" />
+    <Content Include="node_modules\moment\src\lib\moment\format.js" />
+    <Content Include="node_modules\moment\src\lib\moment\from.js" />
+    <Content Include="node_modules\moment\src\lib\moment\get-set.js" />
+    <Content Include="node_modules\moment\src\lib\moment\locale.js" />
+    <Content Include="node_modules\moment\src\lib\moment\min-max.js" />
+    <Content Include="node_modules\moment\src\lib\moment\moment.js" />
+    <Content Include="node_modules\moment\src\lib\moment\now.js" />
+    <Content Include="node_modules\moment\src\lib\moment\prototype.js" />
+    <Content Include="node_modules\moment\src\lib\moment\start-end-of.js" />
+    <Content Include="node_modules\moment\src\lib\moment\to-type.js" />
+    <Content Include="node_modules\moment\src\lib\moment\to.js" />
+    <Content Include="node_modules\moment\src\lib\moment\valid.js" />
+    <Content Include="node_modules\moment\src\lib\parse\regex.js" />
+    <Content Include="node_modules\moment\src\lib\parse\token.js" />
+    <Content Include="node_modules\moment\src\lib\units\aliases.js" />
+    <Content Include="node_modules\moment\src\lib\units\constants.js" />
+    <Content Include="node_modules\moment\src\lib\units\day-of-month.js" />
+    <Content Include="node_modules\moment\src\lib\units\day-of-week.js" />
+    <Content Include="node_modules\moment\src\lib\units\day-of-year.js" />
+    <Content Include="node_modules\moment\src\lib\units\hour.js" />
+    <Content Include="node_modules\moment\src\lib\units\millisecond.js" />
+    <Content Include="node_modules\moment\src\lib\units\minute.js" />
+    <Content Include="node_modules\moment\src\lib\units\month.js" />
+    <Content Include="node_modules\moment\src\lib\units\offset.js" />
+    <Content Include="node_modules\moment\src\lib\units\priorities.js" />
+    <Content Include="node_modules\moment\src\lib\units\quarter.js" />
+    <Content Include="node_modules\moment\src\lib\units\second.js" />
+    <Content Include="node_modules\moment\src\lib\units\timestamp.js" />
+    <Content Include="node_modules\moment\src\lib\units\timezone.js" />
+    <Content Include="node_modules\moment\src\lib\units\units.js" />
+    <Content Include="node_modules\moment\src\lib\units\week-calendar-utils.js" />
+    <Content Include="node_modules\moment\src\lib\units\week-year.js" />
+    <Content Include="node_modules\moment\src\lib\units\week.js" />
+    <Content Include="node_modules\moment\src\lib\units\year.js" />
+    <Content Include="node_modules\moment\src\lib\utils\abs-ceil.js" />
+    <Content Include="node_modules\moment\src\lib\utils\abs-floor.js" />
+    <Content Include="node_modules\moment\src\lib\utils\abs-round.js" />
+    <Content Include="node_modules\moment\src\lib\utils\compare-arrays.js" />
+    <Content Include="node_modules\moment\src\lib\utils\defaults.js" />
+    <Content Include="node_modules\moment\src\lib\utils\deprecate.js" />
+    <Content Include="node_modules\moment\src\lib\utils\extend.js" />
+    <Content Include="node_modules\moment\src\lib\utils\has-own-prop.js" />
+    <Content Include="node_modules\moment\src\lib\utils\hooks.js" />
+    <Content Include="node_modules\moment\src\lib\utils\index-of.js" />
+    <Content Include="node_modules\moment\src\lib\utils\is-array.js" />
+    <Content Include="node_modules\moment\src\lib\utils\is-date.js" />
+    <Content Include="node_modules\moment\src\lib\utils\is-function.js" />
+    <Content Include="node_modules\moment\src\lib\utils\is-number.js" />
+    <Content Include="node_modules\moment\src\lib\utils\is-object-empty.js" />
+    <Content Include="node_modules\moment\src\lib\utils\is-object.js" />
+    <Content Include="node_modules\moment\src\lib\utils\is-undefined.js" />
+    <Content Include="node_modules\moment\src\lib\utils\keys.js" />
+    <Content Include="node_modules\moment\src\lib\utils\map.js" />
+    <Content Include="node_modules\moment\src\lib\utils\mod.js" />
+    <Content Include="node_modules\moment\src\lib\utils\some.js" />
+    <Content Include="node_modules\moment\src\lib\utils\to-int.js" />
+    <Content Include="node_modules\moment\src\lib\utils\zero-fill.js" />
+    <Content Include="node_modules\moment\src\locale\af.js" />
+    <Content Include="node_modules\moment\src\locale\ar-dz.js" />
+    <Content Include="node_modules\moment\src\locale\ar-kw.js" />
+    <Content Include="node_modules\moment\src\locale\ar-ly.js" />
+    <Content Include="node_modules\moment\src\locale\ar-ma.js" />
+    <Content Include="node_modules\moment\src\locale\ar-sa.js" />
+    <Content Include="node_modules\moment\src\locale\ar-tn.js" />
+    <Content Include="node_modules\moment\src\locale\ar.js" />
+    <Content Include="node_modules\moment\src\locale\az.js" />
+    <Content Include="node_modules\moment\src\locale\be.js" />
+    <Content Include="node_modules\moment\src\locale\bg.js" />
+    <Content Include="node_modules\moment\src\locale\bm.js" />
+    <Content Include="node_modules\moment\src\locale\bn.js" />
+    <Content Include="node_modules\moment\src\locale\bo.js" />
+    <Content Include="node_modules\moment\src\locale\br.js" />
+    <Content Include="node_modules\moment\src\locale\bs.js" />
+    <Content Include="node_modules\moment\src\locale\ca.js" />
+    <Content Include="node_modules\moment\src\locale\cs.js" />
+    <Content Include="node_modules\moment\src\locale\cv.js" />
+    <Content Include="node_modules\moment\src\locale\cy.js" />
+    <Content Include="node_modules\moment\src\locale\da.js" />
+    <Content Include="node_modules\moment\src\locale\de-at.js" />
+    <Content Include="node_modules\moment\src\locale\de-ch.js" />
+    <Content Include="node_modules\moment\src\locale\de.js" />
+    <Content Include="node_modules\moment\src\locale\dv.js" />
+    <Content Include="node_modules\moment\src\locale\el.js" />
+    <Content Include="node_modules\moment\src\locale\en-au.js" />
+    <Content Include="node_modules\moment\src\locale\en-ca.js" />
+    <Content Include="node_modules\moment\src\locale\en-gb.js" />
+    <Content Include="node_modules\moment\src\locale\en-ie.js" />
+    <Content Include="node_modules\moment\src\locale\en-il.js" />
+    <Content Include="node_modules\moment\src\locale\en-nz.js" />
+    <Content Include="node_modules\moment\src\locale\eo.js" />
+    <Content Include="node_modules\moment\src\locale\es-do.js" />
+    <Content Include="node_modules\moment\src\locale\es-us.js" />
+    <Content Include="node_modules\moment\src\locale\es.js" />
+    <Content Include="node_modules\moment\src\locale\et.js" />
+    <Content Include="node_modules\moment\src\locale\eu.js" />
+    <Content Include="node_modules\moment\src\locale\fa.js" />
+    <Content Include="node_modules\moment\src\locale\fi.js" />
+    <Content Include="node_modules\moment\src\locale\fo.js" />
+    <Content Include="node_modules\moment\src\locale\fr-ca.js" />
+    <Content Include="node_modules\moment\src\locale\fr-ch.js" />
+    <Content Include="node_modules\moment\src\locale\fr.js" />
+    <Content Include="node_modules\moment\src\locale\fy.js" />
+    <Content Include="node_modules\moment\src\locale\gd.js" />
+    <Content Include="node_modules\moment\src\locale\gl.js" />
+    <Content Include="node_modules\moment\src\locale\gom-latn.js" />
+    <Content Include="node_modules\moment\src\locale\gu.js" />
+    <Content Include="node_modules\moment\src\locale\he.js" />
+    <Content Include="node_modules\moment\src\locale\hi.js" />
+    <Content Include="node_modules\moment\src\locale\hr.js" />
+    <Content Include="node_modules\moment\src\locale\hu.js" />
+    <Content Include="node_modules\moment\src\locale\hy-am.js" />
+    <Content Include="node_modules\moment\src\locale\id.js" />
+    <Content Include="node_modules\moment\src\locale\is.js" />
+    <Content Include="node_modules\moment\src\locale\it.js" />
+    <Content Include="node_modules\moment\src\locale\ja.js" />
+    <Content Include="node_modules\moment\src\locale\jv.js" />
+    <Content Include="node_modules\moment\src\locale\ka.js" />
+    <Content Include="node_modules\moment\src\locale\kk.js" />
+    <Content Include="node_modules\moment\src\locale\km.js" />
+    <Content Include="node_modules\moment\src\locale\kn.js" />
+    <Content Include="node_modules\moment\src\locale\ko.js" />
+    <Content Include="node_modules\moment\src\locale\ky.js" />
+    <Content Include="node_modules\moment\src\locale\lb.js" />
+    <Content Include="node_modules\moment\src\locale\lo.js" />
+    <Content Include="node_modules\moment\src\locale\lt.js" />
+    <Content Include="node_modules\moment\src\locale\lv.js" />
+    <Content Include="node_modules\moment\src\locale\me.js" />
+    <Content Include="node_modules\moment\src\locale\mi.js" />
+    <Content Include="node_modules\moment\src\locale\mk.js" />
+    <Content Include="node_modules\moment\src\locale\ml.js" />
+    <Content Include="node_modules\moment\src\locale\mn.js" />
+    <Content Include="node_modules\moment\src\locale\mr.js" />
+    <Content Include="node_modules\moment\src\locale\ms-my.js" />
+    <Content Include="node_modules\moment\src\locale\ms.js" />
+    <Content Include="node_modules\moment\src\locale\mt.js" />
+    <Content Include="node_modules\moment\src\locale\my.js" />
+    <Content Include="node_modules\moment\src\locale\nb.js" />
+    <Content Include="node_modules\moment\src\locale\ne.js" />
+    <Content Include="node_modules\moment\src\locale\nl-be.js" />
+    <Content Include="node_modules\moment\src\locale\nl.js" />
+    <Content Include="node_modules\moment\src\locale\nn.js" />
+    <Content Include="node_modules\moment\src\locale\pa-in.js" />
+    <Content Include="node_modules\moment\src\locale\pl.js" />
+    <Content Include="node_modules\moment\src\locale\pt-br.js" />
+    <Content Include="node_modules\moment\src\locale\pt.js" />
+    <Content Include="node_modules\moment\src\locale\ro.js" />
+    <Content Include="node_modules\moment\src\locale\ru.js" />
+    <Content Include="node_modules\moment\src\locale\sd.js" />
+    <Content Include="node_modules\moment\src\locale\se.js" />
+    <Content Include="node_modules\moment\src\locale\si.js" />
+    <Content Include="node_modules\moment\src\locale\sk.js" />
+    <Content Include="node_modules\moment\src\locale\sl.js" />
+    <Content Include="node_modules\moment\src\locale\sq.js" />
+    <Content Include="node_modules\moment\src\locale\sr-cyrl.js" />
+    <Content Include="node_modules\moment\src\locale\sr.js" />
+    <Content Include="node_modules\moment\src\locale\ss.js" />
+    <Content Include="node_modules\moment\src\locale\sv.js" />
+    <Content Include="node_modules\moment\src\locale\sw.js" />
+    <Content Include="node_modules\moment\src\locale\ta.js" />
+    <Content Include="node_modules\moment\src\locale\te.js" />
+    <Content Include="node_modules\moment\src\locale\tet.js" />
+    <Content Include="node_modules\moment\src\locale\tg.js" />
+    <Content Include="node_modules\moment\src\locale\th.js" />
+    <Content Include="node_modules\moment\src\locale\tl-ph.js" />
+    <Content Include="node_modules\moment\src\locale\tlh.js" />
+    <Content Include="node_modules\moment\src\locale\tr.js" />
+    <Content Include="node_modules\moment\src\locale\tzl.js" />
+    <Content Include="node_modules\moment\src\locale\tzm-latn.js" />
+    <Content Include="node_modules\moment\src\locale\tzm.js" />
+    <Content Include="node_modules\moment\src\locale\ug-cn.js" />
+    <Content Include="node_modules\moment\src\locale\uk.js" />
+    <Content Include="node_modules\moment\src\locale\ur.js" />
+    <Content Include="node_modules\moment\src\locale\uz-latn.js" />
+    <Content Include="node_modules\moment\src\locale\uz.js" />
+    <Content Include="node_modules\moment\src\locale\vi.js" />
+    <Content Include="node_modules\moment\src\locale\x-pseudo.js" />
+    <Content Include="node_modules\moment\src\locale\yo.js" />
+    <Content Include="node_modules\moment\src\locale\zh-cn.js" />
+    <Content Include="node_modules\moment\src\locale\zh-hk.js" />
+    <Content Include="node_modules\moment\src\locale\zh-tw.js" />
+    <Content Include="node_modules\moment\src\moment.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Interface\Ispinia\css\plugins\footable\fonts\footable.eot" />
+    <Content Include="Interface\Ispinia\css\plugins\footable\fonts\footable.ttf" />
+    <Content Include="Interface\Ispinia\css\plugins\footable\fonts\footable.woff" />
+    <Content Include="Interface\Ispinia\css\plugins\footable\fonts\footabled41d.eot" />
+    <Content Include="Interface\Ispinia\css\plugins\slick\fonts\slick.eot" />
+    <Content Include="Interface\Ispinia\css\plugins\slick\fonts\slick.ttf" />
+    <Content Include="Interface\Ispinia\css\plugins\slick\fonts\slick.woff" />
+    <Content Include="Interface\Ispinia\css\plugins\slick\fonts\slickd41d.eot" />
+    <Content Include="Interface\Ispinia\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Interface\Ispinia\font-awesome\fonts\fontawesome-webfonte0a5.eot" />
+    <Content Include="Interface\Ispinia\font-awesome\fonts\fontawesome-webfonte0a5.ttf" />
+    <Content Include="Interface\Ispinia\font-awesome\fonts\fontawesome-webfonte0a5.woff" />
+    <Content Include="Interface\Ispinia\font-awesome\fonts\fontawesome-webfonte0a5.woff2" />
+    <Content Include="Interface\Ispinia\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Interface\Ispinia\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Interface\Ispinia\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Interface\Ispinia\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Interface\Ispinia\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="node_modules\chart.js\.editorconfig" />
+    <Content Include="node_modules\chart.js\.eslintignore" />
+    <Content Include="node_modules\chart.js\.eslintrc.yml" />
+    <Content Include="node_modules\chart.js\.htmllintrc" />
+    <Content Include="node_modules\chart.js\.npmignore" />
+    <Content Include="node_modules\chart.js\book.json" />
+    <Content Include="node_modules\chart.js\bower.json" />
+    <Content Include="node_modules\chart.js\composer.json" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\fonts\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\fonts\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\fonts\fontawesome\fontawesome-webfont.woff2" />
+    <Content Include="node_modules\chart.js\dist\docs\gitbook\fonts\fontawesome\FontAwesome.otf" />
+    <Content Include="node_modules\chart.js\dist\docs\search_plus_index.json" />
+    <Content Include="node_modules\chart.js\docs\axes\cartesian\category.md" />
+    <Content Include="node_modules\chart.js\docs\axes\cartesian\linear.md" />
+    <Content Include="node_modules\chart.js\docs\axes\cartesian\logarithmic.md" />
+    <Content Include="node_modules\chart.js\docs\axes\cartesian\README.md" />
+    <Content Include="node_modules\chart.js\docs\axes\cartesian\time.md" />
+    <Content Include="node_modules\chart.js\docs\axes\labelling.md" />
+    <Content Include="node_modules\chart.js\docs\axes\radial\linear.md" />
+    <Content Include="node_modules\chart.js\docs\axes\radial\README.md" />
+    <Content Include="node_modules\chart.js\docs\axes\README.md" />
+    <Content Include="node_modules\chart.js\docs\axes\styling.md" />
+    <Content Include="node_modules\chart.js\docs\charts\area.md" />
+    <Content Include="node_modules\chart.js\docs\charts\bar.md" />
+    <Content Include="node_modules\chart.js\docs\charts\bubble.md" />
+    <Content Include="node_modules\chart.js\docs\charts\doughnut.md" />
+    <Content Include="node_modules\chart.js\docs\charts\line.md" />
+    <Content Include="node_modules\chart.js\docs\charts\mixed.md" />
+    <Content Include="node_modules\chart.js\docs\charts\polar.md" />
+    <Content Include="node_modules\chart.js\docs\charts\radar.md" />
+    <Content Include="node_modules\chart.js\docs\charts\README.md" />
+    <Content Include="node_modules\chart.js\docs\charts\scatter.md" />
+    <Content Include="node_modules\chart.js\docs\configuration\animations.md" />
+    <Content Include="node_modules\chart.js\docs\configuration\elements.md" />
+    <Content Include="node_modules\chart.js\docs\configuration\layout.md" />
+    <Content Include="node_modules\chart.js\docs\configuration\legend.md" />
+    <Content Include="node_modules\chart.js\docs\configuration\README.md" />
+    <Content Include="node_modules\chart.js\docs\configuration\title.md" />
+    <Content Include="node_modules\chart.js\docs\configuration\tooltip.md" />
+    <Content Include="node_modules\chart.js\docs\developers\api.md" />
+    <Content Include="node_modules\chart.js\docs\developers\axes.md" />
+    <Content Include="node_modules\chart.js\docs\developers\charts.md" />
+    <Content Include="node_modules\chart.js\docs\developers\contributing.md" />
+    <Content Include="node_modules\chart.js\docs\developers\plugins.md" />
+    <Content Include="node_modules\chart.js\docs\developers\README.md" />
+    <Content Include="node_modules\chart.js\docs\developers\updates.md" />
+    <Content Include="node_modules\chart.js\docs\general\colors.md" />
+    <Content Include="node_modules\chart.js\docs\general\device-pixel-ratio.md" />
+    <Content Include="node_modules\chart.js\docs\general\fonts.md" />
+    <Content Include="node_modules\chart.js\docs\general\interactions\events.md" />
+    <Content Include="node_modules\chart.js\docs\general\interactions\modes.md" />
+    <Content Include="node_modules\chart.js\docs\general\interactions\README.md" />
+    <Content Include="node_modules\chart.js\docs\general\options.md" />
+    <Content Include="node_modules\chart.js\docs\general\README.md" />
+    <Content Include="node_modules\chart.js\docs\general\responsive.md" />
+    <Content Include="node_modules\chart.js\docs\getting-started\installation.md" />
+    <Content Include="node_modules\chart.js\docs\getting-started\integration.md" />
+    <Content Include="node_modules\chart.js\docs\getting-started\README.md" />
+    <Content Include="node_modules\chart.js\docs\getting-started\usage.md" />
+    <Content Include="node_modules\chart.js\docs\notes\comparison.md" />
+    <Content Include="node_modules\chart.js\docs\notes\extensions.md" />
+    <Content Include="node_modules\chart.js\docs\notes\license.md" />
+    <Content Include="node_modules\chart.js\docs\notes\README.md" />
+    <Content Include="node_modules\chart.js\docs\README.md" />
+    <Content Include="node_modules\chart.js\docs\SUMMARY.md" />
+    <Content Include="node_modules\chart.js\LICENSE.md" />
+    <Content Include="node_modules\chart.js\MAINTAINING.md" />
+    <Content Include="node_modules\chart.js\package.json" />
+    <Content Include="node_modules\chart.js\README.md" />
+    <Content Include="node_modules\chart.js\samples\.eslintrc.yml" />
+    <Content Include="node_modules\chart.js\scripts\deploy.sh" />
+    <Content Include="node_modules\chart.js\scripts\release.sh" />
+    <Content Include="node_modules\chart.js\test\.eslintrc.yml" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-absolute.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-flex-offset.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-flex.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-max.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-min-interval.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-multiple.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-no-overlap.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-offset.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-single-xy.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-single.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\controller.bar\bar-thickness-stacked.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\core.scale\label-offset-vertical-axes.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-end-span.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-end.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin-span.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin-spline-span.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin-spline.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped-span.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-origin.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-start-span.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-boundary-start.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-dataset-span.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-dataset-spline-span.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-dataset-spline.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-line-dataset.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-radar-boundary-origin-spline.json" />
+    <Content Include="node_modules\chart.js\test\fixtures\plugin.filler\fill-radar-boundary-origin.json" />
+    <Content Include="node_modules\chartjs-color-string\.travis.yml" />
+    <Content Include="node_modules\chartjs-color-string\CHANGELOG.md" />
+    <Content Include="node_modules\chartjs-color-string\LICENSE" />
+    <Content Include="node_modules\chartjs-color-string\package.json" />
+    <Content Include="node_modules\chartjs-color-string\README.md" />
+    <Content Include="node_modules\chartjs-color\CHANGELOG.md" />
+    <Content Include="node_modules\chartjs-color\LICENSE" />
+    <Content Include="node_modules\chartjs-color\package.json" />
+    <Content Include="node_modules\chartjs-color\README.md" />
+    <Content Include="node_modules\color-convert\.travis.yml" />
+    <Content Include="node_modules\color-convert\CHANGELOG.md" />
+    <Content Include="node_modules\color-convert\component.json" />
+    <Content Include="node_modules\color-convert\LICENSE" />
+    <Content Include="node_modules\color-convert\package.json" />
+    <Content Include="node_modules\color-convert\README.md" />
+    <Content Include="node_modules\color-name\.eslintrc.json" />
+    <Content Include="node_modules\color-name\.npmignore" />
+    <Content Include="node_modules\color-name\LICENSE" />
+    <Content Include="node_modules\color-name\package.json" />
+    <Content Include="node_modules\color-name\README.md" />
+    <Content Include="node_modules\moment\CHANGELOG.md" />
+    <Content Include="node_modules\moment\LICENSE" />
+    <Content Include="node_modules\moment\package.json" />
+    <Content Include="node_modules\moment\README.md" />
+    <Content Include="package-lock.json" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\UserProfile.cshtml" />
+    <Content Include="Views\Home\SummaryReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Reference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="node_modules\moment\moment.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>39618</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:39618/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

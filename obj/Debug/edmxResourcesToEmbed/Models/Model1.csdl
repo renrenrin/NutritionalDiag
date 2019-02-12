@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NutritionalDiagnosisDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="NutritionalDiagnosisDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tDiagnosis" EntityType="NutritionalDiagnosisDBModel.tDiagnosi" />
+    <EntitySet Name="tMenus" EntityType="NutritionalDiagnosisDBModel.tMenu" />
+    <EntitySet Name="tProfileImages" EntityType="NutritionalDiagnosisDBModel.tProfileImage" />
+    <EntitySet Name="tProfiles" EntityType="NutritionalDiagnosisDBModel.tProfile" />
+    <EntitySet Name="trefBrgies" EntityType="NutritionalDiagnosisDBModel.trefBrgy" />
+    <EntitySet Name="trefCityMuns" EntityType="NutritionalDiagnosisDBModel.trefCityMun" />
+    <EntitySet Name="trefProvinces" EntityType="NutritionalDiagnosisDBModel.trefProvince" />
+    <EntitySet Name="tUserAccesses" EntityType="NutritionalDiagnosisDBModel.tUserAccess" />
+    <EntitySet Name="tUsers" EntityType="NutritionalDiagnosisDBModel.tUser" />
+    <EntitySet Name="tProfileRoles" EntityType="NutritionalDiagnosisDBModel.tProfileRole" />
+    <EntitySet Name="vProfiles" EntityType="NutritionalDiagnosisDBModel.vProfile" />
+    <EntitySet Name="vUserAccesses" EntityType="NutritionalDiagnosisDBModel.vUserAccess" />
+  </EntityContainer>
+  <EntityType Name="tDiagnosi">
+    <Key>
+      <PropertyRef Name="tDiagnosisID" />
+    </Key>
+    <Property Name="tDiagnosisID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="profileCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="height" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="weight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BMIResult" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="logDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="brgyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tMenu">
+    <Key>
+      <PropertyRef Name="menuCode" />
+    </Key>
+    <Property Name="menuCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menuLabel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="controllerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="actionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tProfileImage">
+    <Key>
+      <PropertyRef Name="profileCode" />
+    </Key>
+    <Property Name="profileCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ImageData" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tProfile">
+    <Key>
+      <PropertyRef Name="profileCode" />
+    </Key>
+    <Property Name="profileCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="firstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="middleName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="lastName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="roleCode" Type="Int32" />
+    <Property Name="userCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="brgyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="trefBrgy">
+    <Key>
+      <PropertyRef Name="brgyCode" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="brgyCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="brgyDesc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="regCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="provCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="citymunCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="trefCityMun">
+    <Key>
+      <PropertyRef Name="citymunCode" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="psgcCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="citymunDesc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="regDesc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="provCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="citymunCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="trefProvince">
+    <Key>
+      <PropertyRef Name="provCode" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="psgcCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="provDesc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="regCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="provCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tUserAccess">
+    <Key>
+      <PropertyRef Name="userAccessCode" />
+    </Key>
+    <Property Name="userAccessCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menuCode" Type="Int32" />
+    <Property Name="roleCode" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tUser">
+    <Key>
+      <PropertyRef Name="userCode" />
+    </Key>
+    <Property Name="userCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="access" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="isValidated" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tProfileRole">
+    <Key>
+      <PropertyRef Name="roleCode" />
+    </Key>
+    <Property Name="roleCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="roleColor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vProfile">
+    <Key>
+      <PropertyRef Name="profileCode" />
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="profileCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="firstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="middleName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="lastName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="userCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="roleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="roleColor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="isValidated" Type="Boolean" />
+    <Property Name="roleCode" Type="Int32" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fullname" Type="String" MaxLength="52" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vUserAccess">
+    <Key>
+      <PropertyRef Name="userAccess" />
+    </Key>
+    <Property Name="userAccess" Type="Int32" Nullable="false" />
+    <Property Name="menuCode" Type="Int32" />
+    <Property Name="PositionID" Type="Int32" />
+    <Property Name="controllerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="actionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

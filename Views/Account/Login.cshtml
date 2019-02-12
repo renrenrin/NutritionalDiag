@@ -1,0 +1,215 @@
+﻿@{
+    ViewBag.Title = "Log in";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NutSa | @ViewBag.Title </title>
+    <link href="~/Interface/Ispinia/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Interface/Ispinia/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Interface/Ispinia/css/animate.css" rel="stylesheet" />
+    <link href="~/Interface/Ispinia/css/style.css" rel="stylesheet" />
+
+    <style>
+        .btn-file {
+            position: relative;
+            overflow: hidden;
+        }
+
+            .btn-file input[type=file] {
+                position: absolute;
+                top: 0;
+                right: 0;
+                min-width: 100%;
+                min-height: 100%;
+                font-size: 100px;
+                text-align: right;
+                filter: alpha(opacity=0);
+                opacity: 0;
+                outline: none;
+                background: white;
+                cursor: inherit;
+                display: block;
+            }
+    </style>
+</head>
+
+
+<body class="white-bg">
+
+    <div class="loginColumns animated fadeInDown">
+        <div class="row">
+            <h1>Welcome to NutSa | Nutritional Diagnosis Application</h1>
+            <div class="col-md-6">
+                <img src="~/Content/5n.png"  style="height:300px;width:400px"/>
+               
+
+            </div>
+            <div class="col-md-6">
+                <div class="ibox-content">
+                    <p>@Html.ValidationMessage("", new { id = "ErrorMessage" })</p>
+                    <form action="~/Account/SignIn" id="sign_in" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Username" name="username" autocomplete="off" required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" name="password" required="">
+                        </div>
+                        <button type="submit" class="ladda-button btn btn-danger btn-block">Login</button>
+
+
+                        <p class="text-muted text-center"><small>Do not have an account?</small></p>
+                        <a class="btn btn-sm btn-white btn-block" onclick="r()">Create an account</a>
+                    </form>
+
+                    <form action="~/Account/Register" id="reg" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="First Name" name="firstName" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Middle Name" name="middleName" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last Name" name="lastName" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="sex">
+                                <option value="true">Male</option>
+                                <option value="false">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Username" name="userName" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" name="password" id="pw" onkeyup="c()" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Confirm Password" name="cPass" id="cpw" onkeyup="c()" autocomplete="off" required>
+                        </div>
+
+
+                        <div id="vali"></div>
+
+                        <br />
+                        <small>Please read the <a href="#"> terms of use </a> to our agreement </small>
+                        <button type="submit" id="su" class="ladda-button btn btn-danger  btn-block">I Accept and Register</button>
+                        <a class="btn btn-sm btn-white btn-block" onclick="l()">I already have an account</a>
+                    </form>
+
+                    <form action="~/Account/UploadPhoto" id="upload" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+
+                        </div>
+                        <div class="form-group">
+                            <center>
+                                <img alt="image" class="img-circle" id="imagedata" src="~/Interface/Ispinia/img/no_photo.png" style="object-fit:cover; width:120px;height:120px;padding:10px 10px 10px 10px;" onclick="i()" />
+
+                                <br /><small>Click the image to upload a photo</small>
+                            </center>
+                            <input onchange="upimg(this)" type="file" class="ladda-button btn btn-danger btn-file btn-block" id="img" name="img" accept="image/jpeg, image/png" style="display: none;">
+                        </div>
+
+                        <button type="submit" class="btn btn-danger block full-width m-b">Save</button>
+
+                    </form>
+
+                    @*<p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2018</small> </p>*@
+
+
+                </div>
+            </div>
+        </div>
+        
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                Copyright Example Company
+            </div>
+            <div class="col-md-6 text-right">
+                <small>© 2014-2015</small>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Mainly scripts -->
+    <script src="~/Interface/Ispinia/js/jquery-2.1.1.js"></script>
+    <script src="~/Interface/Ispinia/js/bootstrap.min.js"></script>
+    <script>
+
+        render();
+        function upimg(file) {
+
+            var reader = new FileReader();
+            console.log()
+            reader.onload = function (e) {
+               $("#imagedata").attr('src',e.target.result)
+            }
+            reader.readAsDataURL(file.files[0])
+        }
+
+        function i() {
+            $("#img").click()
+        }
+
+        function render() {
+
+
+            if ($("#ErrorMessage").text() == 'Upload a Picture of yourself so that we can verify your Profile.') {
+                console.log('asd')
+                $("#upload").show();
+                $("#reg").hide();
+                $("#sign_in").hide();
+            }
+            else {
+                $("#upload").hide();
+            }
+
+        }
+
+
+        $("#reg").hide();
+        var a = 0;
+        function r() {
+            $("#sign_in").hide();
+            $("#reg").show();
+        }
+        function l() {
+            $("#reg").hide();
+            $("#sign_in").show();
+        }
+        function c() {
+            if ($("#pw").val() == $("#cpw").val()) {
+                $("#su").prop("disabled", false);
+                if (a = 1) {
+                    $("#conf").remove();
+                    a = 0;
+                }
+            }
+            else {
+                $("#su").prop("disabled", true);
+                if (a == 0) {
+
+                    $("#vali").append("<small id='conf'>Passwords does not match!</small>")
+                    a = 1;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+
+</html>

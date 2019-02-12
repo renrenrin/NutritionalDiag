@@ -1,0 +1,160 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script src="~/Angular/app.js"></script>
+<script src="~/Angular/Controller/indexctrl.js"></script>
+<div ng-app="davnorapp" ng-controller="indexctrl">
+
+    <script type="text/ng-template" id="customTemplate.html">
+        <a>
+            <img class="img-circle" style="height:60px;width:60px" ng-src="../Account/RetrieveImage/{{match.model.profileCode}}" width="16">
+            <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
+        </a>
+    </script>
+
+    <script type="text/ng-template" id="customPopupTemplate.html">
+        <div class="custom-popup-wrapper"
+             ng-style="{top: position().top+'px', left: position().left+'px'}"
+             style="display: block; "
+             ng-show="isOpen() && !moveInProgress"
+             aria-hidden="{{!isOpen()}}">
+            <p class="message">select location from drop down.</p>
+
+            <ul class="dropdown-menu" role="listbox" style="">
+                <li class="uib-typeahead-match" ng-repeat="match in matches track by $index" ng-class="{active: isActive($index) }"
+                    ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" role="option" id="{{::match.id}}">
+                    <div uib-typeahead-match index="$index" match="match" query="query" template-url="templateUrl"></div>
+                </li>
+
+            </ul>
+
+        </div>
+    </script>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Nutritional Diagnosis</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row" style="padding-right:10px; padding-left:15px; width:100%;">
+
+
+        <h3>Nutritional Diagnose and Quick Intervention</h3>
+
+        <div class="row">
+           
+                <div class="col-sm-4">
+                    <label>Select City/Municipality</label>
+                    <select class="form-control" ng-model="city">
+                        <option ng-repeat="t in tcitymun" value="{{t.citymunCode}}">{{t.citymunDesc}}</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <label>Select Barangay</label>
+                    <select class="form-control" ng-model="result.brgyCode">
+                        <option ng-repeat="t in tbrgy | filter:{citymunCode:city}" value="{{t.brgyCode}}">{{t.brgyDesc}}</option>
+                    </select>
+                </div>
+            <div class="col-sm-4" ng-hide="hsearchbr">
+                <label>Search for Patient</label>
+                <input type="text" id="searchbox" class="search-query form-control ng-pristine ng-untouched ng-valid" ng-model="searchmembar" placeholder="Type to Search" uib-typeahead="mem as mem.fullname for mem in tmembers | filter:{fullname:$viewValue}" typeahead-template-url="customTemplate.html" typeahead-show-hint="true" typeahead-min-length="0" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-3-4748" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / repeat scroll padding-box border-box rgb(255, 255, 255); color: rgb(153, 153, 153);">
+
+            </div>
+            
+        </div>
+        <div class="row" style="float:left; width:50%;">
+           
+           
+            <form>
+                <h4>Age </h4>
+                <div class="row" style="padding-right:10px; padding-left:15px;">
+                    <input class="form-control" type="number" min="1" max="100" value="1" style="float:left; width:49%" ng-model="ag"/>
+                    <select class="form-control form-control-lg" style="float:right; width:49%" ng-model="yers">
+                        <option value="months old">In Months</option>
+                        <option value="years old" >In Years</option>
+                    </select>
+                </div>       
+                <h4>Height</h4>
+                <div class="row" style="padding-right:10px; padding-left:15px;">
+                    <input class=" form-control" type="number" id="heightinCM" name="TBheightCM" style="float:left; width:49%" placeholder="Your height..." />
+                    @*<select class="form-control form-control-lg" style="float:right; width:49%">
+                        <option>Centimeter(CM)</option>
+                        <option>Feet/Inch(Ft+In)</option>
+                    </select>*@
+                </div>
+                <h4>Weight</h4>
+                <div class="row" style="padding-right:10px; padding-left:15px;">
+                    <input class="form-control" type="number" id="weightinKG" name="TBweightKG" style="float:left; width:49%" placeholder="Your weight..." />
+                    @*<select class="form-control form-control-lg" style="float:right; width:49%">
+                        <option>Kilogram(KG)</option>
+                        <option>Pounds(LB)</option>
+                    </select>*@
+                </div>
+
+            </form>
+            <h1> </h1>
+            <button class="form-control btn btn-success" name="DiagnoseClck" ng-click="calCmKg()">Diagnose/Calculate</button>
+            <h1> </h1>
+        </div>
+        <div class="row" style="float:right; width:50%;">
+            <h3>Nutritional Result</h3>
+
+            <table class="table table-hover" style="width:100%;">
+                <tr>
+                    <th>Weight Status</th>
+                    <th>Differences</th>
+                    <th>Guide</th>
+                </tr>
+                <tr>
+                    <td>Underweight</td>
+                    <td>Below 18.8</td>
+                    <td><span class="btn btn-sm btn-warning fa fa-eye" data-toggle="modal" data-target="#myModal" style="border-radius: 50%; color: #FFF;"></span></td>
+                </tr>
+                <tr>
+                    <td>Normal</td>
+                    <td>18.5 - 24.9</td>
+                    <td><span class="btn btn-sm btn-warning fa fa-eye" data-toggle="modal" data-target="#myModal" style="border-radius: 50%; color: #FFF;"></span></td>
+                </tr>
+                <tr>
+                    <td>Overweight</td>
+                    <td>25.0 - 29.9</td>
+                    <td><span class="btn btn-sm btn-warning fa fa-eye" data-toggle="modal" data-target="#myModal" style="border-radius: 50%; color: #FFF;"></span></td>
+                </tr>
+                <tr>
+                    <td>Obese</td>
+                    <td>30.0 Above</td>
+                    <td><span class="btn btn-sm btn-warning fa fa-eye" data-toggle="modal" data-target="#myModal" style="border-radius: 50%; color: #FFF;"></span></td>
+                </tr>
+            </table>
+            <h2>Result: <input style="border:none; border-color:transparent;" type="number" step="0.01" id="diagnosisResult" name="resultOMG" readonly /></h2>
+
+            <div class="row" style="padding-right:10px; padding-left:15px;">
+                <button class="form-control btn btn-primary" style="float:left; width:49%" ng-click="saveRes()">Save Result</button>
+                <a href="../Home/Index"> <button class="form-control " style="float:right; width:49%">Clear Result</button></a>
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header btn-success">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
