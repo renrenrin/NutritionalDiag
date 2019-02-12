@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NutritionalDiagnosisDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tDiagnosis">
+    <Key>
+      <PropertyRef Name="tDiagnosisID" />
+    </Key>
+    <Property Name="tDiagnosisID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="profileCode" Type="varchar" MaxLength="50" />
+    <Property Name="height" Type="varchar" MaxLength="50" />
+    <Property Name="weight" Type="varchar" MaxLength="50" />
+    <Property Name="age" Type="varchar" MaxLength="50" />
+    <Property Name="BMIResult" Type="varchar" MaxLength="50" />
+    <Property Name="logDate" Type="varchar" MaxLength="50" />
+    <Property Name="brgyCode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tMenu">
+    <Key>
+      <PropertyRef Name="menuCode" />
+    </Key>
+    <Property Name="menuCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="menuLabel" Type="varchar" MaxLength="50" />
+    <Property Name="controllerName" Type="varchar" MaxLength="50" />
+    <Property Name="actionName" Type="varchar" MaxLength="50" />
+    <Property Name="icon" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tProfileImages">
+    <Key>
+      <PropertyRef Name="profileCode" />
+    </Key>
+    <Property Name="profileCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="ImageData" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NutritionalDiagnosisDB.dbo.tProfileRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tProfileRoles">
+    <Key>
+      <PropertyRef Name="roleCode" />
+    </Key>
+    <Property Name="roleCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="roleName" Type="varchar" MaxLength="20" />
+    <Property Name="roleColor" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="tProfiles">
+    <Key>
+      <PropertyRef Name="profileCode" />
+    </Key>
+    <Property Name="profileCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="20" />
+    <Property Name="middleName" Type="varchar" MaxLength="15" />
+    <Property Name="lastName" Type="varchar" MaxLength="15" />
+    <Property Name="roleCode" Type="int" />
+    <Property Name="userCode" Type="varchar" MaxLength="30" />
+    <Property Name="brgyCode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="trefBrgy">
+    <Key>
+      <PropertyRef Name="brgyCode" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="brgyCode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="brgyDesc" Type="varchar" MaxLength="255" />
+    <Property Name="regCode" Type="varchar" MaxLength="255" />
+    <Property Name="provCode" Type="varchar" MaxLength="255" />
+    <Property Name="citymunCode" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="trefCityMun">
+    <Key>
+      <PropertyRef Name="citymunCode" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="psgcCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="citymunDesc" Type="nvarchar" MaxLength="255" />
+    <Property Name="regDesc" Type="nvarchar" MaxLength="255" />
+    <Property Name="provCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="citymunCode" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="trefProvince">
+    <Key>
+      <PropertyRef Name="provCode" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="psgcCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="provDesc" Type="nvarchar" MaxLength="255" />
+    <Property Name="regCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="provCode" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tUserAccess">
+    <Key>
+      <PropertyRef Name="userAccessCode" />
+    </Key>
+    <Property Name="userAccessCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="menuCode" Type="int" />
+    <Property Name="roleCode" Type="int" />
+  </EntityType>
+  <EntityType Name="tUsers">
+    <Key>
+      <PropertyRef Name="userCode" />
+    </Key>
+    <Property Name="userCode" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="access" Type="varchar" MaxLength="10" />
+    <Property Name="isValidated" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NutritionalDiagnosisDB.dbo.vProfiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vProfiles">
+    <Key>
+      <PropertyRef Name="profileCode" />
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="profileCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="firstName" Type="varchar" MaxLength="20" />
+    <Property Name="middleName" Type="varchar" MaxLength="15" />
+    <Property Name="lastName" Type="varchar" MaxLength="15" />
+    <Property Name="userCode" Type="varchar" MaxLength="30" />
+    <Property Name="roleName" Type="varchar" MaxLength="20" />
+    <Property Name="roleColor" Type="varchar" MaxLength="255" />
+    <Property Name="isValidated" Type="bit" />
+    <Property Name="roleCode" Type="int" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="52" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'NutritionalDiagnosisDB.dbo.vUserAccess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vUserAccess">
+    <Key>
+      <PropertyRef Name="userAccess" />
+    </Key>
+    <Property Name="userAccess" Type="int" Nullable="false" />
+    <Property Name="menuCode" Type="int" />
+    <Property Name="PositionID" Type="int" />
+    <Property Name="controllerName" Type="varchar" MaxLength="50" />
+    <Property Name="actionName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="NutritionalDiagnosisDBModelStoreContainer">
+    <EntitySet Name="tDiagnosis" EntityType="Self.tDiagnosis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tMenu" EntityType="Self.tMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tProfileImages" EntityType="Self.tProfileImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tProfiles" EntityType="Self.tProfiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="trefBrgy" EntityType="Self.trefBrgy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="trefCityMun" EntityType="Self.trefCityMun" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="trefProvince" EntityType="Self.trefProvince" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tUserAccess" EntityType="Self.tUserAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tUsers" EntityType="Self.tUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tProfileRoles" EntityType="Self.tProfileRoles" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tProfileRoles].[roleCode] AS [roleCode], 
+    [tProfileRoles].[roleName] AS [roleName], 
+    [tProfileRoles].[roleColor] AS [roleColor]
+    FROM [dbo].[tProfileRoles] AS [tProfileRoles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vProfiles" EntityType="Self.vProfiles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vProfiles].[profileCode] AS [profileCode], 
+    [vProfiles].[firstName] AS [firstName], 
+    [vProfiles].[middleName] AS [middleName], 
+    [vProfiles].[lastName] AS [lastName], 
+    [vProfiles].[userCode] AS [userCode], 
+    [vProfiles].[roleName] AS [roleName], 
+    [vProfiles].[roleColor] AS [roleColor], 
+    [vProfiles].[isValidated] AS [isValidated], 
+    [vProfiles].[roleCode] AS [roleCode], 
+    [vProfiles].[username] AS [username], 
+    [vProfiles].[fullname] AS [fullname]
+    FROM [dbo].[vProfiles] AS [vProfiles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vUserAccess" EntityType="Self.vUserAccess" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vUserAccess].[userAccess] AS [userAccess], 
+    [vUserAccess].[menuCode] AS [menuCode], 
+    [vUserAccess].[PositionID] AS [PositionID], 
+    [vUserAccess].[controllerName] AS [controllerName], 
+    [vUserAccess].[actionName] AS [actionName]
+    FROM [dbo].[vUserAccess] AS [vUserAccess]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

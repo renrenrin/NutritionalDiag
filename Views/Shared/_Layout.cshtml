@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Nusta | SBMI</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/morris.css" rel="stylesheet" />
+    <link href="~/Content/metisMenu.min.css" rel="stylesheet" />
+    <link href="~/Content/sb-admin-2.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Content/angular.min.js"></script>
+    <script src="~/node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+    <script src="~/node_modules/chart.js/dist/Chart.min.js"></script>
+    <link href="~/Angular/ui-bootstrap-2.5.0-csp.css" rel="stylesheet" />
+    <script src="~/Angular/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+    <style>
+        #custom-search-input {
+            margin: 0;
+            margin-top: 10px;
+            padding: 0;
+        }
+
+            #custom-search-input .search-query {
+                padding-right: 3px;
+                padding-right: 4px \9;
+                padding-left: 3px;
+                padding-left: 4px \9;
+                /* IE7-8 doesn't have border-radius, so don't indent the padding */
+                margin-bottom: 0;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;
+            }
+
+            #custom-search-input button {
+                border: 0;
+                background: none;
+                /** belows styles are working good */
+                padding: 2px 5px;
+                margin-top: 2px;
+                position: relative;
+                left: -28px;
+                /* IE7-8 doesn't have border-radius, so don't indent the padding */
+                margin-bottom: 0;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;
+                color: #D9230F;
+            }
+
+        .search-query:focus + button {
+            z-index: 3;
+        }
+
+
+        .typeahead-demo .custom-popup-wrapper {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            display: none;
+            background-color: #f9f9f9;
+            height: 30%;
+        }
+
+            .typeahead-demo .custom-popup-wrapper > .message {
+                padding: 10px 20px;
+                border-bottom: 1px solid #ddd;
+                color: #868686;
+            }
+
+            .typeahead-demo .custom-popup-wrapper > .dropdown-menu {
+                position: static;
+                float: none;
+                display: block;
+                min-width: 160px;
+                background-color: transparent;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+            }
+    </style>
+
+    <style>
+        @@media only screen and (min-width : 320px) {
+            .printable, .printable * {
+                display: none !important;
+            }
+        }
+
+
+        @@media print {
+            .no-print, .no-print * {
+                display: none !important;
+            }
+
+            .printable, .printable * {
+            }
+        }
+
+        .pagebreak {
+            page-break-before: always;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../Home/Index">
+                <img src="~/Content/5n.png" style="width:200px;height:150px;margin-top:-60px"/>
+            </a>
+        </div>
+        <!-- /.navbar-header -->
+        <!-- /.navbar-top-links -->
+    
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="~/Account/UserProfile?id=@Session["PID"]">
+                            <img src="../account/retrieveimage/@Session["PID"]" class="img-circle" style="object-fit:cover;width:40px;height:40px" />
+                            &nbsp;&nbsp;&nbsp; <b>@Session["Uname"]</b>
+                        </a>
+                       
+                    </li>
+
+                   
+                 
+                   
+
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+
+
+
+
+        <!-- /.navbar-static-side -->
+    </nav>
+    
+
+
+ 
+    <div class="body-content" id="page-wrapper">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Content/metisMenu.min.js"></script>
+    <script src="~/Content/sb-admin-2.js"></script>
+    <script src="~/Content/morris.min.js"></script>
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+    $.get('../Account/getmenu').then(function (d) {
+        console.log(d);
+
+        for (var x = 0 ; x < d.length; x++) {
+            $('#side-menu').append("<li><a href='../" + d[x].controllerName + "/" + d[x].actionName + "'> <i class='"+ d[x].icon +"'> </i> <span class='nav-label'>" + d[x].menuLabel + "</span></a></li>")
+        }
+        $('#side-menu').append(' <li> <a href="../Account/SignOut">  <i class="fa fa-sign-out"></i> Log out </a> </li>')
+
+    })
+
+    </script>
+
+</body>
+</html>

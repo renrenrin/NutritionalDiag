@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Angular/app.js"></script>
+<script src="~/Angular/Controller/m4ua63.js"></script>
+
+<div ng-app="davnorapp">
+    <div ng-controller="m4ua63">
+        <div class="wrapper wrapper-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content mailbox-content">
+                            <div class="file-manager">
+                                <div class="space-25"></div>
+                                <h5>Manage</h5>
+                                <ul class="folder-list m-b-md" style="padding: 0">
+                                    <li><a ng-click="rval()"> <i class="fa fa-envelope-o"></i> Active Users</a></li>
+                                    <li><a ng-click="uval()"> <i class="fa fa-inbox "></i> Unvalidated/Deactivated Users </a></li>
+                                    <li><a ng-click="fnu()"> <i class="fa fa-inbox "></i> New Users </a></li>
+
+                                    @*<li><a ng-click="ruval()"> <i class="fa fa-certificate"></i> Unroled Users</a></li>*@
+
+                                </ul>
+                                <h5>Roles</h5>
+                                <ul class="category-list" style="padding: 0">
+                                    <li ng-repeat="t in _r" ng-click="fa(t)"><a href="#"> <i class="fa fa-circle" style="color:{{t.roleColor}}"></i> {{t.roleName}} </a></li>
+
+                                </ul>
+
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 animated fadeInRight">
+                    <div class="mail-box-header">
+                        <h2>
+                            {{_q}}
+                        </h2>
+                        <input type="text" placeholder="Search..." class="form-control" ng-model="_srch" />
+
+                    </div>
+                    <div class="mail-box">
+
+                        <table class="table table-hover table-mail" ng-hide="unval">
+
+                            <tbody>
+
+                                <tr ng-repeat="t in _p|filter:{isValidated:false}| filter:_srch" class="read">
+                                    <td class="check-mail">
+                                        <img alt="image" class="img-circle" id="imagedata" src="../account/retrieveimage/{{t.profileCode}}" style="object-fit:cover; width:80px;height:80px;padding:10px 10px 10px 10px;" onclick="i()" />
+
+                                    </td>
+                                    <td class="mail-ontact"><a href="~/Account/UserProfile?id={{t.profileCode}}">{{t.firstName}} {{t.middleName}} {{t.lastName}}</a></td>
+                                    <td class="mail-subject"><a href="mail_detail.html"><span class="label label-default pull-right">pending</span></a></td>
+
+                                    <td class="text-right mail-date" ng-click="fb(t)"><button class="btn btn-info"><i class="fa fa-check"></i>Activate User</button></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <table class="table table-hover table-mail" ng-hide="valu">
+                            <tbody>
+                                <tr ng-repeat="t in _p|filter:{isValidated:true,roleName:_rl} | filter:_srch" class="read">
+                                    <td class="check-mail">
+                                        <img alt="image" class="img-circle" id="imagedata" src="../account/retrieveimage/{{t.profileCode}}" style="object-fit:cover; width:80px;height:80px;padding:10px 10px 10px 10px;" onclick="i()" />
+
+                                    </td>
+                                    <td class="mail-ontact"><a href="~/Account/UserProfile?id={{t.profileCode}}">{{t.firstName}} {{t.middleName}} {{t.lastName}}</a></td>
+                                    <td class="mail-subject"><a href="~/Account/UserProfile?id={{t.profileCode}}"><span class="label label-warning pull-right" style="background-color:{{t.roleColor}}">{{t.roleName}}</span></a></td>
+
+                                    <td class="text-right mail-date">
+                                        <div class="input-group-btn">
+                                            <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" type="button" aria-expanded="false">Change Role <span class="caret"></span></button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li ng-repeat="r in _r"><a ng-click="fc(t,r)"> <i class="fa fa-circle" style="color:{{r.roleColor}}"></i> {{r.roleName}} </a></li>
+
+                                            </ul>
+
+                                        </div>
+                                    <td class=""><button class="btn btn-danger" ng-click="fd(t)"><i class="fa fa-close"></i> Deactivate</button></td>
+
+
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <table class="table table-hover table-mail" ng-hide="unrval">
+                            <tbody>
+                                <tr ng-repeat="t in _up | filter:_srch" class="unread">
+                                    <td class="check-mail">
+                                        <img alt="image" class="img-circle" id="imagedata" src="../account/retrieveimage/{{t.profileCode}}" style="object-fit:cover; width:80px;height:80px;padding:10px 10px 10px 10px;" onclick="i()" />
+
+                                    </td>
+                                    <td class="mail-ontact"><a href="mail_detail.html">{{t.firstName}} {{t.middleName}} {{t.lastName}}</a></td>
+                                    <td class="mail-subject"><a href="mail_detail.html"><span class="label label-warning-light pull-right">no roles</span></a></td>
+
+                                    <td class="text-right mail-date">
+                                        <div class="input-group-btn">
+                                            <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" type="button" aria-expanded="false">Change Role <span class="caret"></span></button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li ng-repeat="r in _r"><a ng-click="fc(t,r)"> <i class="fa fa-circle" style="color:{{r.roleColor}}"></i> {{r.roleName}} </a></li>
+
+                                            </ul>
+                                        </div>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

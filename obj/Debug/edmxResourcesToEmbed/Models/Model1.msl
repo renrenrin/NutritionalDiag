@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NutritionalDiagnosisDBModelStoreContainer" CdmEntityContainer="NutritionalDiagnosisDBEntities">
+    <EntitySetMapping Name="tDiagnosis">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.tDiagnosi">
+        <MappingFragment StoreEntitySet="tDiagnosis">
+          <ScalarProperty Name="brgyCode" ColumnName="brgyCode" />
+          <ScalarProperty Name="logDate" ColumnName="logDate" />
+          <ScalarProperty Name="BMIResult" ColumnName="BMIResult" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="profileCode" ColumnName="profileCode" />
+          <ScalarProperty Name="tDiagnosisID" ColumnName="tDiagnosisID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tMenus">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.tMenu">
+        <MappingFragment StoreEntitySet="tMenu">
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="actionName" ColumnName="actionName" />
+          <ScalarProperty Name="controllerName" ColumnName="controllerName" />
+          <ScalarProperty Name="menuLabel" ColumnName="menuLabel" />
+          <ScalarProperty Name="menuCode" ColumnName="menuCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tProfileImages">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.tProfileImage">
+        <MappingFragment StoreEntitySet="tProfileImages">
+          <ScalarProperty Name="ImageData" ColumnName="ImageData" />
+          <ScalarProperty Name="profileCode" ColumnName="profileCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tProfiles">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.tProfile">
+        <MappingFragment StoreEntitySet="tProfiles">
+          <ScalarProperty Name="brgyCode" ColumnName="brgyCode" />
+          <ScalarProperty Name="userCode" ColumnName="userCode" />
+          <ScalarProperty Name="roleCode" ColumnName="roleCode" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="middleName" ColumnName="middleName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="profileCode" ColumnName="profileCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trefBrgies">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.trefBrgy">
+        <MappingFragment StoreEntitySet="trefBrgy">
+          <ScalarProperty Name="citymunCode" ColumnName="citymunCode" />
+          <ScalarProperty Name="provCode" ColumnName="provCode" />
+          <ScalarProperty Name="regCode" ColumnName="regCode" />
+          <ScalarProperty Name="brgyDesc" ColumnName="brgyDesc" />
+          <ScalarProperty Name="brgyCode" ColumnName="brgyCode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trefCityMuns">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.trefCityMun">
+        <MappingFragment StoreEntitySet="trefCityMun">
+          <ScalarProperty Name="citymunCode" ColumnName="citymunCode" />
+          <ScalarProperty Name="provCode" ColumnName="provCode" />
+          <ScalarProperty Name="regDesc" ColumnName="regDesc" />
+          <ScalarProperty Name="citymunDesc" ColumnName="citymunDesc" />
+          <ScalarProperty Name="psgcCode" ColumnName="psgcCode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trefProvinces">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.trefProvince">
+        <MappingFragment StoreEntitySet="trefProvince">
+          <ScalarProperty Name="provCode" ColumnName="provCode" />
+          <ScalarProperty Name="regCode" ColumnName="regCode" />
+          <ScalarProperty Name="provDesc" ColumnName="provDesc" />
+          <ScalarProperty Name="psgcCode" ColumnName="psgcCode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tUserAccesses">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.tUserAccess">
+        <MappingFragment StoreEntitySet="tUserAccess">
+          <ScalarProperty Name="roleCode" ColumnName="roleCode" />
+          <ScalarProperty Name="menuCode" ColumnName="menuCode" />
+          <ScalarProperty Name="userAccessCode" ColumnName="userAccessCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tUsers">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.tUser">
+        <MappingFragment StoreEntitySet="tUsers">
+          <ScalarProperty Name="isValidated" ColumnName="isValidated" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="userCode" ColumnName="userCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tProfileRoles">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.tProfileRole">
+        <MappingFragment StoreEntitySet="tProfileRoles">
+          <ScalarProperty Name="roleColor" ColumnName="roleColor" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="roleCode" ColumnName="roleCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vProfiles">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.vProfile">
+        <MappingFragment StoreEntitySet="vProfiles">
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="roleCode" ColumnName="roleCode" />
+          <ScalarProperty Name="isValidated" ColumnName="isValidated" />
+          <ScalarProperty Name="roleColor" ColumnName="roleColor" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="userCode" ColumnName="userCode" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="middleName" ColumnName="middleName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="profileCode" ColumnName="profileCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vUserAccesses">
+      <EntityTypeMapping TypeName="NutritionalDiagnosisDBModel.vUserAccess">
+        <MappingFragment StoreEntitySet="vUserAccess">
+          <ScalarProperty Name="actionName" ColumnName="actionName" />
+          <ScalarProperty Name="controllerName" ColumnName="controllerName" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="menuCode" ColumnName="menuCode" />
+          <ScalarProperty Name="userAccess" ColumnName="userAccess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
